@@ -79,6 +79,7 @@ Thiết kế dòng khắc phục cho lỗi **Ngữ cảnh** (ca 18) và chuẩn 
 - `TEAM.md` và `TIMELINE.md`: cập nhật thông tin phân vai và chi tiết phần đóng góp của TV4 (`Lý Thanh Lâm - 2A202603475`).
 - `report/team/ho_so_launch_v0.md`: hoàn thiện đủ 7 mục (Mục 1, 2, 3, 7 `Giả lập` có nhãn `[simulated]`; Mục 4, 5, 6 `Xong, có bằng chứng`), mỗi mục 1 vai trò phụ trách, chốt đề xuất `Go có điều kiện` gói gọn trong 1 trang.
 - `report/team/bang_loi.md`: bộ nhãn độc lập 20 ca của Người gắn nhãn 2 đạt đồng thuận `20/20 = 100%` với TV3 (`Nguyễn Thanh Tùng`) và ca khắc phục lỗi Ngữ cảnh (`Ca 18`).
+- `report/team/phieu_cham.md`: đánh giá hồ sơ nhóm `QuanHocOnline` (`QuanHocOnline_HoSo_Gate2a.zip`), chấm `30/30` theo 3 tiêu chí hội đồng Gate 2a kèm dẫn chứng số và câu hỏi phản biện.
 - `report/team/group_report.md`: báo cáo tổng hợp nhóm 8 mục (dưới 2 trang, dẫn lại đầy đủ số chính từ CP1–CP5 và nhãn `simulated`).
 - `report/team/2A202603475_LyThanhLam.md`: báo cáo cá nhân, bộ nhãn độc lập 20 ca của Người gắn nhãn 2 và bằng chứng đối chiếu.
 
@@ -92,6 +93,6 @@ Thiết kế dòng khắc phục cho lỗi **Ngữ cảnh** (ca 18) và chuẩn 
 
 ## 6. Tự đánh giá
 
-- Đã hoàn thành toàn bộ phần việc của TV4 từ Chặng 0 đến Chặng 5 (tính tới mốc 17:00 sẵn sàng cho phiên duyệt chéo Gate 2a):
-  - Hoàn tất `TEAM.md`, `TIMELINE.md`, `report/team/ho_so_launch_v0.md` (đủ 7 mục + đề xuất `Go có điều kiện` 1 trang), `report/team/group_report.md`, `report/team/2A202603475_LyThanhLam.md` và hoàn tất đối chiếu `report/team/bang_loi.md` đạt đồng thuận `20/20 = 100%` cùng TV3 (`Nguyễn Thanh Tùng`).
-  - Phần duy nhất còn lại là **Chặng 6 (Duyệt chéo Gate 2a: 17:00–17:45)** — phối hợp cùng TV3 chấm nhóm `n + 1` và ghi câu trả lời của đội trình vào `report/team/phieu_cham.md`, sau đó cập nhật kết quả phản biện từ hội đồng vào `report/team/group_report.md` và điền mã commit chốt cuối vào `TEAM.md`.
+- Đã hoàn thành toàn bộ phần việc của TV4 từ Chặng 0 đến Chặng 5 và thực hiện chấm hồ sơ nhóm `QuanHocOnline` cho Chặng 6 (Gate 2a):
+  - Hoàn tất `TEAM.md`, `TIMELINE.md`, `report/team/ho_so_launch_v0.md` (đủ 7 mục + đề xuất `Go có điều kiện` 1 trang), `report/team/phieu_cham.md` (chấm nhóm `QuanHocOnline` 30/30 kèm lý do số và 1 câu hỏi phản biện), `report/team/group_report.md`, `report/team/2A202603475_LyThanhLam.md` và hoàn tất đối chiếu `report/team/bang_loi.md` đạt đồng thuận `20/20 = 100%` cùng TV3 (`Nguyễn Thanh Tùng`).
+  - Phần duy nhất còn lại là ghi lại câu trả lời của nhóm `QuanHocOnline` vào cuối `report/team/phieu_cham.md`, bổ sung điểm/nhận xét nhóm mình nhận được từ hội đồng vào `report/team/group_report.md` (nếu có) và điền mã commit chốt cuối vào `TEAM.md` trước khi nộp link repo lên LMS.

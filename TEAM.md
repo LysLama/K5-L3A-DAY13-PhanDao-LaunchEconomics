@@ -127,5 +127,6 @@ Người gắn nhãn 2 kiêm giữ hồ sơ / PM (`TIMELINE.md`):
 - `TEAM.md`, `TIMELINE.md`
 - `report/team/ho_so_launch_v0.md` (đủ 7 mục, đúng trạng thái `Giả lập` / `Xong, có bằng chứng`, mỗi mục 1 vai trò, chốt đề xuất `Go có điều kiện` 1 trang)
 - `report/team/bang_loi.md` (bộ nhãn độc lập Người gắn nhãn 2, đồng thuận `20/20 = 100%` cùng TV3, ca lỗi Ngữ cảnh `Ca 18`)
+- `report/team/phieu_cham.md` (phiếu chấm nhóm `QuanHocOnline` `30/30` kèm dẫn chứng số và câu hỏi phản biện Gate 2a)
 - `report/team/group_report.md` (báo cáo tổng hợp nhóm 8 mục cho toàn bộ phần A–E)
 - `report/team/2A202603475_LyThanhLam.md` (báo cáo cá nhân, bộ nhãn độc lập 20 ca và đối chiếu Gate 2a)

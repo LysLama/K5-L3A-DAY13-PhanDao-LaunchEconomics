@@ -2,20 +2,20 @@
 
 Nhóm số n chấm nhóm số n + 1; nhóm cuối chấm nhóm 1. Chấm theo bằng chứng trong hồ sơ, không theo cách trình bày: một đề xuất No-go có lý do bằng số được điểm cao hơn một đề xuất Go bỏ qua con số bất lợi.
 
-- Nhóm chấm (hội đồng): ...
-- Nhóm được chấm: ...
+- Nhóm chấm (hội đồng): **PhanDao** (`L3A` · `K5-L3A-DAY13-PhanDao-LaunchEconomics`)
+- Nhóm được chấm: **QuanHocOnline** (`L3A` · `K5-L3A-DAY13-QuanHocOnline-LaunchEconomics` · file `QuanHocOnline_HoSo_Gate2a.zip`)
 
 | Tiêu chí | 0 điểm | 5 điểm | 10 điểm | Điểm | Lý do (có số) |
 | --- | --- | --- | --- | ---: | --- |
-| Đề xuất khớp bằng chứng | Mâu thuẫn với số của chính nhóm | Khớp nhưng bỏ qua một con số bất lợi | Khớp, nêu cả con số bất lợi và cách xử lý | ... | ... |
-| Số giả lập và phạm vi | Không nhãn; phạm vi "mọi yêu cầu" | Có nhãn hoặc có thu hẹp phạm vi | Nhãn ở mọi số giả lập; phạm vi thu hẹp có lý do bằng số | ... | ... |
-| Pilot ra được quyết định | Không đối chứng hoặc thiếu cỡ mẫu | Đủ cỡ mẫu, luật dừng chung chung | Tách được tác động, đủ mẫu, luật dừng có ngưỡng, thời hạn, người có quyền dừng | ... | ... |
-| **Tổng** | | | | **... / 30** | |
+| Đề xuất khớp bằng chứng | Mâu thuẫn với số của chính nhóm | Khớp nhưng bỏ qua một con số bất lợi | Khớp, nêu cả con số bất lợi và cách xử lý | **10** | Chọn **Go có điều kiện** khớp với số chi phí (`4.472 đ/việc`, `0,49×` cả hệ thống, `4.599 đ = 0,38×` đủ tải [simulated]); nêu thẳng 3 số bất lợi: xem lại 100% lên `11.743–12.415 đ` (`0,98×–1,03×` [simulated]), `power = 64,17%` ở mức +5 điểm, và mở lại nền `3,97%` phạm vi (`4,25%` toàn mẫu), kèm 4 điều kiện xử lý có vai trò phụ trách và ngày kiểm tra. |
+| Số giả lập và phạm vi | Không nhãn; phạm vi "mọi yêu cầu" | Có nhãn hoặc có thu hẹp phạm vi | Nhãn ở mọi số giả lập; phạm vi thu hẹp có lý do bằng số | **10** | Gắn nhãn `simulated` / trạng thái `Giả lập` ở các mục chi phí và `simulated_inputs` trong cả 5 file (`ho_so_launch_v0.md`, `bang_chi_phi.md`, `chi_so.md`, `pilot_plan.yaml`), không có từ cấm; thu hẹp phạm vi về `noi_dia` (`0,22×`, `95,0%` thành công) + `hang_nang` (`0,69×`, `74,1%`), loại `quoc_te` (`22.515 đ = 1,88×`, `27,3%` thành công, `ok` tụt `30,0% → 11,4% → 2,2%`) và `doi_tac` (`0,85×`, `54,4%`). |
+| Pilot ra được quyết định | Không đối chứng hoặc thiếu cỡ mẫu | Đủ cỡ mẫu, luật dừng chung chung | Tách được tác động, đủ mẫu, luật dừng có ngưỡng, thời hạn, người có quyền dừng | **10** | Tách tác động theo `staff` (`20 + 20` cụm, ngẫu nhiên `seed=42`, phân tầng `12` depot, kiểm soát spillover qua `staff_id`); tính đủ 5 câu D1 (`1.251`, `3.103`, trần `1.000`, trần `300`, chọn MDE `6` điểm → `859`/nhóm, `m ≥ 299`, `DE = 6,96`, minh bạch `power = 64,17%`); 3 luật dừng đủ 4 vế (`NẾU – TRONG – THÌ – KHÔNG THÌ`), có ngưỡng (`≥ 2 điểm` / `6%` / `≥ 1 ca trùng`; `> 8.000 đ`; `> 40%`), thời hạn (`3 ngày`; `2 tuần`; `1 tuần`) và 1 vai trò có quyền dừng/xử lý (`Giám đốc vận hành`, `Quản lý sản phẩm`, `Trưởng nhóm CSKH`). |
+| **Tổng** | | | | **30 / 30** | Đủ bằng chứng số trong cả 5 file, `pilot_plan.yaml` pass `yaml.safe_load` và không còn dấu `?`, bảng lỗi đồng thuận `18/20 = 90,0%` (khớp `20/20`). |
 
-**Quyết định của hội đồng:** Go · Go có điều kiện · No-go (giữ một)
+**Quyết định của hội đồng:** **Go có điều kiện** *(đồng thuận với đề xuất của nhóm QuanHocOnline; yêu cầu dời mốc ký điều kiện 4 lên trước khi bắt đầu pilot thay vì `2026-12-15`)*.
 
-**Lý do:** ...
+**Lý do:** Hồ sơ của nhóm `QuanHocOnline` trả lời đầy đủ 4 câu hỏi cốt lõi trên bộ số khớp chuẩn, gắn nhãn `simulated` nhất quán, loại được phân khúc lỗ (`quoc_te` `1,88×`) và giải trình minh bạch đánh đổi `MDE = 6 điểm` (`power = 64,17%` ở +5 điểm) cùng rủi ro xem lại 100% (`1,03×` [simulated]). Điểm cần làm rõ khi phản biện là tính nhất quán của mốc thời gian điều kiện 4 (ký chấp nhận đánh đổi phải hoàn tất *trước* ngày mở pilot theo `predeclared`) và tính khả thi khi yêu cầu giữ thời gian xem lại `≤ 4,8 phút/ca` ngay trong tuần đầu.
 
-**Một câu hỏi cho đội trình:** ...
+**Một câu hỏi cho đội trình:** Điều kiện 4 của nhóm đặt ngày kiểm tra là `2026-12-15` để ký chấp nhận `MDE = 6 điểm` (`power = 64,17%`), vậy trước khi mở bước `0.10` đầu tháng 12 thiết kế đã được `predeclared` chưa; đồng thời với `m ≥ 299` (`5.980` yêu cầu quan sát mỗi nhóm chỉ tính từ bước `0.50`) và mức xem lại nền hiện tại `5,0 phút/ca` (`890 phút / 177 ca`), nhóm làm thế nào giữ thời gian xem lại `≤ 4,8 phút/ca` ngay tuần đầu mà không kích hoạt dừng hoặc thiếu thời gian tích lũy đủ mẫu trước `2027-01-05`?
 
-**Câu trả lời của đội trình (ghi lại tại buổi):** ...
+**Câu trả lời của đội trình (ghi lại tại buổi):** *(Chờ ghi nhận trực tiếp phản hồi của nhóm QuanHocOnline trong phiên trao đổi / phản biện).*
