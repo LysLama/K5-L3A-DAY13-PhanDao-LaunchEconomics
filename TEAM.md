@@ -113,19 +113,19 @@ Người gắn nhãn 1 & QA / Spec (`TIMELINE.md`):
 Người gắn nhãn 2 kiêm giữ hồ sơ / PM (`TIMELINE.md`):
 
 - **Chặng 0–2 (CP1–CP2):** thiết lập thông tin nhóm và khung 4 thành viên trong `TEAM.md`; khởi tạo và cập nhật `report/team/ho_so_launch_v0.md` (Mục 1, 2, 3, 7 ở trạng thái `Giả lập`, gắn nhãn `[simulated]` và gán đúng 1 vai trò phụ trách); phối hợp kiểm tra câu trả lời A2–A4, B1–B4 trong `report/team/bang_chi_phi.md` (≤ 3 dòng/câu, có số).
-- **Chặng 3 (CP3 · Nhiệm vụ C):** gắn nhãn độc lập 20 ca lỗi theo 5 loại Google PAIR (Vai Người gắn nhãn 2); chuẩn bị phương án khắc phục cho ca lỗi **Ngữ cảnh** (ca 18) và sẵn sàng tổng hợp hai bộ nhãn độc lập + 5 ca khắc phục (ghép với đề xuất của TV1, TV2, TV3) vào `report/team/bang_loi.md` và cập nhật Mục 5 hồ sơ sau khi đối chiếu với TV3.
-- **Chặng 4–7 (CP4–CP5 & Đóng gói):** soạn thảo giải trình đánh đổi cỡ mẫu D1 (chấp nhận MDE 6 điểm với 20 + 20 nhân viên, power 0,64 ở mức 5 điểm); tổng hợp `report/team/group_report.md` và hoàn thiện Mục 4, 5, 6 cùng đề xuất cuối trong `report/team/ho_so_launch_v0.md`.
+- **Chặng 3 (CP3 · Nhiệm vụ C):** gắn nhãn độc lập 20 ca lỗi theo 5 loại Google PAIR (Vai Người gắn nhãn 2), so nhãn với TV3 (`Nguyễn Thanh Tùng`) đạt đồng thuận `20/20 = 100%`, hoàn thiện phương án khắc phục cho ca lỗi **Ngữ cảnh** (`Ca 18`) và ghép 5 ca vào `report/team/bang_loi.md`.
+- **Chặng 4–7 (CP4–CP5 & Đóng gói):** soạn thảo giải trình đánh đổi cỡ mẫu D1 (chấp nhận MDE 6 điểm với 20 + 20 nhân viên, power 0,64 ở mức 5 điểm); tổng hợp `report/team/group_report.md` và hoàn thiện đầy đủ 7 mục cùng đề xuất cuối `Go có điều kiện` trong `report/team/ho_so_launch_v0.md` sẵn sàng cho phiên duyệt chéo Gate 2a.
 
 ### Đóng góp cụ thể (tính tới thời điểm hiện tại)
 
-- Hoàn thiện thông tin phân vai trong `TEAM.md` và `TIMELINE.md`; kiểm tra và duy trì `report/team/ho_so_launch_v0.md` cho các mục đã có số liệu từ CP1–CP2 & E2 (Mục 1: 4.472 đ toàn mẫu, 3.414 đ trong phạm vi, cộng cố định 4.599 đ [simulated]; Mục 2: Làm lại +51,8%, Xem lại +40,7%, Lương +23,1%, xem lại 100% lên 0,98×–1,03× [simulated]; Mục 3: 0,38× ở đủ tải, 0,48× ở nửa tải, toàn hệ thống 0,49×, loại `quoc_te` 1,88× [simulated]; Mục 7: 3 dòng rủi ro kinh tế từ B1, B4, A4 [simulated]).
-- Thực hiện gắn nhãn độc lập 20 ca lỗi theo nguyên nhân gốc (Google PAIR: *Do người dùng · Hệ thống · Ngữ cảnh · Giới hạn hệ thống · Ngầm*) của Người gắn nhãn 2 và ghi nhận vào báo cáo cá nhân `report/team/2A202603475_LyThanhLam.md` (giữ nguyên `report/team/bang_loi.md` chờ so nhãn với TV3 để đảm bảo quy tắc độc lập).
-- Soạn sẵn dòng khắc phục cho ca lỗi **Ngữ cảnh** (Ca 18: phát hiện qua tỉ lệ `ticket_reopened` với lý do thắc mắc số tiền hoàn dù kiểm tra sổ cái thấy tính đúng theo tuần; khắc phục bằng mẫu thông báo luôn hiển thị rõ công thức `30.000 đ × 50% = 15.000 đ`; phụ trách: `Trưởng nhóm CSKH`) để ghép cùng đề xuất của TV1 (Hệ thống, Giới hạn hệ thống) và TV2 (Ngầm, Do người dùng).
-- Soạn giải trình đánh đổi cỡ mẫu CP4 (40 nhân viên chia 20 + 20 có trần hiệu dụng 1.000 < 1.251 ở MDE 5 điểm nên chọn MDE 6 điểm cần 859/nhóm, m ≥ 299 yêu cầu/người, DE = 6,96, chấp nhận power 0,6417 ở mức 5 điểm) và khởi tạo toàn bộ nội dung A, B, D1, E1, E2 vào `report/team/group_report.md`.
+- Hoàn thiện thông tin phân vai trong `TEAM.md` và `TIMELINE.md`; cập nhật đầy đủ 7 mục trong `report/team/ho_so_launch_v0.md`: Mục 1–3 & 7 (trạng thái `Giả lập`, nhãn `[simulated]`), Mục 4–6 (trạng thái `Xong, có bằng chứng` từ `chi_so.md`, `bang_loi.md`, `pilot_plan.yaml`), và chốt đề xuất **Go có điều kiện** cho phạm vi `noi_dia + hang_nang` (nêu thẳng các con số bất lợi: xem lại 100% `0,98×–1,03×` [simulated], `power = 0,64` ở mức +5 điểm, mở lại nền `4,25%` / `3,97%` phạm vi) kèm 4 điều kiện có vai trò phụ trách và ngày kiểm tra cụ thể.
+- Hoàn thành gắn nhãn độc lập 20 ca lỗi theo nguyên nhân gốc (Google PAIR: *Do người dùng · Hệ thống · Ngữ cảnh · Giới hạn hệ thống · Ngầm*) của Người gắn nhãn 2, đối chiếu với TV3 (`Nguyễn Thanh Tùng`) đạt đồng thuận `20/20 = 100%` (khớp `20/20`), và đóng góp phương án khắc phục ca lỗi **Ngữ cảnh** (`Ca 18`, phụ trách `Trưởng nhóm CSKH`) vào `report/team/bang_loi.md`.
+- Soạn giải trình đánh đổi cỡ mẫu CP4 (40 nhân viên chia 20 + 20 có trần hiệu dụng 1.000 < 1.251 ở MDE 5 điểm nên chọn MDE 6 điểm cần 859/nhóm, m ≥ 299 yêu cầu/người, DE = 6,96, chấp nhận power 0,6417 ở mức 5 điểm) và hoàn thiện báo cáo nhóm `report/team/group_report.md` (8 mục, dẫn đủ số chính từ CP1–CP5).
 
 ### Bằng chứng
 
 - `TEAM.md`, `TIMELINE.md`
-- `report/team/ho_so_launch_v0.md` (khung 7 mục và các mục 1, 2, 3, 7 đã khóa số liệu `[simulated]`)
-- `report/team/group_report.md` (tổng hợp mục 1–8 cho các phần A, B, D1, E1, E2 đã hoàn thành)
-- `report/team/2A202603475_LyThanhLam.md` (bộ nhãn độc lập 20 ca của Người gắn nhãn 2, đề xuất khắc phục lỗi Ngữ cảnh, giải trình đánh đổi D1 và bản nháp Mục 4–6 + Đề xuất `Go có điều kiện`)
+- `report/team/ho_so_launch_v0.md` (đủ 7 mục, đúng trạng thái `Giả lập` / `Xong, có bằng chứng`, mỗi mục 1 vai trò, chốt đề xuất `Go có điều kiện` 1 trang)
+- `report/team/bang_loi.md` (bộ nhãn độc lập Người gắn nhãn 2, đồng thuận `20/20 = 100%` cùng TV3, ca lỗi Ngữ cảnh `Ca 18`)
+- `report/team/group_report.md` (báo cáo tổng hợp nhóm 8 mục cho toàn bộ phần A–E)
+- `report/team/2A202603475_LyThanhLam.md` (báo cáo cá nhân, bộ nhãn độc lập 20 ca và đối chiếu Gate 2a)

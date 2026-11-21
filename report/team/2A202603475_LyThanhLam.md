@@ -65,21 +65,22 @@ Thiết kế dòng khắc phục cho lỗi **Ngữ cảnh** (ca 18) và chuẩn 
 | 4 | Giới hạn hệ thống | Event `handoff_to_staff` với `reason = thieu_du_lieu`, theo dõi tỉ lệ theo từng loại yêu cầu mỗi ngày | Giữ cơ chế chuyển thẳng cho nhân viên kèm bản tóm tắt thông tin đã thu thập; loại `quoc_te` ra khỏi phạm vi pilot | PM trợ lý hoàn phí |
 | 17 | Ngầm | Event `audit_sample_checked`: kiểm mẫu ngẫu nhiên `100 đơn/tuần` đối chiếu bảng giá hiện hành; ngưỡng `> 1%` đơn lệch tiền | Tự động xoá cache bảng giá khi phát hành bảng giá mới và ghi `pricing_version` vào mọi `trace_id` | Kế toán trưởng |
 
-### 3.4. Giải trình đánh đổi cỡ mẫu D1 & Bản nháp chốt Hồ sơ Launch v0 (CP4–CP5)
+### 3.4. Giải trình đánh đổi cỡ mẫu D1 & Chốt Hồ sơ Launch v0 (CP4–CP5)
 - **Giải trình đánh đổi cỡ mẫu (đã đồng bộ vào `report/team/pilot_plan.yaml`):** Với 40 nhân viên CSKH chia đều `20` can thiệp + `20` đối chứng và `ICC = 0,02`, cỡ mẫu hiệu dụng tối đa bị chặn bởi trần `c / ICC = 20 / 0,02 = 1.000 < 1.251`, nên không thể đạt `power = 0,80` ở mức chênh `MDE = 5 điểm`. Nhóm chọn thiết kế `20 + 20` nhân viên ở **MDE = 6 điểm** (`n_e = 859` yêu cầu hiệu dụng/nhóm → mỗi nhân viên xử lý `m ≥ 299` yêu cầu, `DE = 6,96`), và ghi nhận rõ con số bất lợi: nếu tác động thật chỉ là `+5 điểm` thì `power = 0,6417 (~0,64)`.
-- **Bản nháp Mục 4, 5, 6 và Đề xuất cuối cho `report/team/ho_so_launch_v0.md` (sẵn sàng điền ngay khi TV3 hoàn tất 3 luật dừng trong `pilot_plan.yaml`, 2 chỉ số tự đề xuất trong `chi_so.md` và so nhãn `bang_loi.md`):**
-  - *Mục 4 (Chỉ số chính, dùng, an toàn):* Đợt chạy thử (chưa có đối chứng): chính `82,83%` (`994/1.200`), bỏ qua gợi ý `27,12%` (`48/177`), mở lại 7 ngày `4,25%` (`51/1.200`; phạm vi pilot `3,97%`); 10 event có `trace_id` (`Xong, có bằng chứng` · `Người gắn nhãn 1`).
-  - *Mục 5 (Bảng lỗi & khắc phục):* 20 ca phân theo 5 loại Google PAIR, 5 ca đại diện đủ 5 loại có event/ngưỡng đo được và 1 vai trò phụ trách (`Xong, có bằng chứng` · `Người gắn nhãn 2, kiêm giữ hồ sơ`).
-  - *Mục 6 (Pilot plan):* Chia ngẫu nhiên `20 + 20` nhân viên phân tầng cùng depot, rollout `0,10 → 0,25 → 0,50`, `MDE = 0,06` (`m ≥ 299`/người, `DE = 6,96`, `n = 859`/nhóm; power `0,64` ở mức `+5 điểm`), 3 luật dừng 4 vế, chốt ngày `2027-01-05` (`Xong, có bằng chứng` · `Người viết code`).
-  - *Đề xuất dự kiến:* **Go có điều kiện** cho phạm vi `noi_dia + hang_nang` (loại `quoc_te` `1,88×` và `doi_tac` `0,85×`), nêu thẳng 2 con số bất lợi (`power = 0,64` ở MDE 5 điểm; xem lại 100% tốn `11.743–12.415 đ = 0,98×–1,03×` [simulated]) kèm 4 điều kiện có vai trò phụ trách và ngày kiểm tra cụ thể.
-- **Tổng hợp báo cáo nhóm:** Viết đầy đủ 8 mục trong `report/team/group_report.md` dẫn lại toàn bộ số liệu chính từ A1–A4, B1–B4, D1–D2, E1–E2.
+- **Hoàn thiện Mục 4, 5, 6 và Đề xuất cuối trong `report/team/ho_so_launch_v0.md` (đã ghép hoàn chỉnh sau khi TV3 hoàn tất 3 luật dừng, 2 chỉ số tự đề xuất và đối chiếu `bang_loi.md`):**
+  - *Mục 4 (Chỉ số chính, dùng, an toàn):* Đợt chạy thử (chưa có đối chứng): chính `82,83%` (`994/1.200`), bỏ qua gợi ý `27,12%` (`48/177`), mở lại 7 ngày `4,25%` (`51/1.200`; phạm vi pilot `3,97%`); kèm 2 chỉ số tự đề xuất và 10 event có `trace_id` (`Xong, có bằng chứng` · `Người gắn nhãn 1`).
+  - *Mục 5 (Bảng lỗi & khắc phục):* 20 ca phân theo 5 loại Google PAIR đạt đồng thuận `20/20 = 100%` cùng TV3 (`Nguyễn Thanh Tùng`), 5 ca đại diện đủ 5 loại có event/ngưỡng đo được và 1 vai trò phụ trách (`Xong, có bằng chứng` · `Người gắn nhãn 2, kiêm giữ hồ sơ`).
+  - *Mục 6 (Pilot plan):* Chia ngẫu nhiên `20 + 20` nhân viên phân tầng cùng depot, rollout `0,10 → 0,25 → 0,50`, `MDE = 0,06` (`m ≥ 299`/người, `DE = 6,96`, `n = 859`/nhóm; bất lợi: `power = 0,64` ở mức `+5 điểm`), 3 luật dừng 4 vế, chốt ngày `2027-01-05` (`Xong, có bằng chứng` · `Người viết code`).
+  - *Đề xuất đã chốt:* **Go có điều kiện** cho phạm vi `noi_dia + hang_nang` (loại `quoc_te` `1,88×` và `doi_tac` `0,85×`), nêu thẳng 3 con số bất lợi (`power = 0,64` ở MDE 5 điểm; xem lại 100% tốn `11.743–12.415 đ = 0,98×–1,03×` [simulated]; mở lại nền `4,25%` / `3,97%` phạm vi) kèm 4 điều kiện có 1 vai trò phụ trách và ngày kiểm tra cụ thể (`2026-11-30`, `2026-12-08`, `2026-12-15`).
+- **Tổng hợp báo cáo nhóm:** Cập nhật đầy đủ 8 mục trong `report/team/group_report.md` dẫn lại toàn bộ số liệu chính từ A1–E3.
 
 ## 4. Bằng chứng
 
 - `TEAM.md` và `TIMELINE.md`: cập nhật thông tin phân vai và chi tiết phần đóng góp của TV4 (`Lý Thanh Lâm - 2A202603475`).
-- `report/team/ho_so_launch_v0.md`: khung 7 mục và số liệu Mục 1, 2, 3, 7 có nhãn `[simulated]`, trạng thái `Giả lập`, mỗi mục 1 vai trò phụ trách.
-- `report/team/group_report.md`: báo cáo tổng hợp nhóm 8 mục (dưới 2 trang, dẫn lại đầy đủ số chính và nhãn `simulated`).
-- `report/team/2A202603475_LyThanhLam.md`: bộ nhãn độc lập 20 ca của Người gắn nhãn 2, phương án khắc phục ca lỗi Ngữ cảnh (ca 18), giải trình đánh đổi cỡ mẫu D1 và bản nháp chốt Mục 4–6 + Đề xuất `Go có điều kiện`.
+- `report/team/ho_so_launch_v0.md`: hoàn thiện đủ 7 mục (Mục 1, 2, 3, 7 `Giả lập` có nhãn `[simulated]`; Mục 4, 5, 6 `Xong, có bằng chứng`), mỗi mục 1 vai trò phụ trách, chốt đề xuất `Go có điều kiện` gói gọn trong 1 trang.
+- `report/team/bang_loi.md`: bộ nhãn độc lập 20 ca của Người gắn nhãn 2 đạt đồng thuận `20/20 = 100%` với TV3 (`Nguyễn Thanh Tùng`) và ca khắc phục lỗi Ngữ cảnh (`Ca 18`).
+- `report/team/group_report.md`: báo cáo tổng hợp nhóm 8 mục (dưới 2 trang, dẫn lại đầy đủ số chính từ CP1–CP5 và nhãn `simulated`).
+- `report/team/2A202603475_LyThanhLam.md`: báo cáo cá nhân, bộ nhãn độc lập 20 ca của Người gắn nhãn 2 và bằng chứng đối chiếu.
 
 ## 5. Công cụ AI đã dùng
 
@@ -87,10 +88,10 @@ Thiết kế dòng khắc phục cho lỗi **Ngữ cảnh** (ca 18) và chuẩn 
 - Cách tự kiểm tra:
   - Chạy trực tiếp `src/lab13.py` để đối chiếu từng con số trong `ho_so_launch_v0.md` và `group_report.md` (sai số `0%` so với đáp án hướng dẫn).
   - Tự đọc 20 ca lỗi trong `docs/Ngay13_Lab13_De_bai_hoc_vien.docx` và đối chiếu từng ca với câu hỏi nhận diện nguyên nhân gốc của 5 loại Google PAIR.
-  - Chạy lệnh quét từ khoá cấm theo quy tắc 5 của `README.md` trên toàn bộ `report/team/` và kiểm tra `git diff --stat` đảm bảo không chạm vào các file dữ liệu gốc (`logix_runs.csv`, `logix_requests.csv`, `lab13_starter.py`, `MSSV_HoTen.md`).
+  - Chạy lệnh kiểm tra `yaml.safe_load`, quét dấu `?` ngoài comment, quét từ khoá cấm theo quy tắc 5 của `README.md` trên toàn bộ `report/team/` và kiểm tra `git diff --stat` đảm bảo không chạm vào các file dữ liệu gốc (`logix_runs.csv`, `logix_requests.csv`, `lab13_starter.py`, `MSSV_HoTen.md`).
 
 ## 6. Tự đánh giá
 
-- Đã hoàn thành toàn bộ phần việc của TV4 tính tới thời điểm hiện tại mà không làm phát sinh xung đột Git hay vi phạm quy tắc gắn nhãn độc lập với TV3:
-  - Hoàn tất `TEAM.md`, `TIMELINE.md`, `report/team/group_report.md`, `report/team/2A202603475_LyThanhLam.md` và các mục 1, 2, 3, 7 của `report/team/ho_so_launch_v0.md`.
-  - Đã hoàn thành bộ nhãn độc lập 20 ca lỗi của Người gắn nhãn 2 và dòng khắc phục lỗi Ngữ cảnh; ngay khi TV3 đưa bộ nhãn độc lập của Người gắn nhãn 1, 3 luật dừng `pilot_plan.yaml` và 2 chỉ số tự đề xuất `chi_so.md` lên, sẽ ghép ngay vào `bang_loi.md` và khóa Mục 4–6 cùng Đề xuất cuối trong `ho_so_launch_v0.md`.
+- Đã hoàn thành toàn bộ phần việc của TV4 từ Chặng 0 đến Chặng 5 (tính tới mốc 17:00 sẵn sàng cho phiên duyệt chéo Gate 2a):
+  - Hoàn tất `TEAM.md`, `TIMELINE.md`, `report/team/ho_so_launch_v0.md` (đủ 7 mục + đề xuất `Go có điều kiện` 1 trang), `report/team/group_report.md`, `report/team/2A202603475_LyThanhLam.md` và hoàn tất đối chiếu `report/team/bang_loi.md` đạt đồng thuận `20/20 = 100%` cùng TV3 (`Nguyễn Thanh Tùng`).
+  - Phần duy nhất còn lại là **Chặng 6 (Duyệt chéo Gate 2a: 17:00–17:45)** — phối hợp cùng TV3 chấm nhóm `n + 1` và ghi câu trả lời của đội trình vào `report/team/phieu_cham.md`, sau đó cập nhật kết quả phản biện từ hội đồng vào `report/team/group_report.md` và điền mã commit chốt cuối vào `TEAM.md`.
