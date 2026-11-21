@@ -49,6 +49,7 @@ Chuẩn bị trả lời phản biện ở Gate 2a (1 phút):
 - Commit `563a57c`: thông tin nhóm trong `TEAM.md`, khung `ho_so_launch_v0.md`.
 - Commit `0ccf501`: A1–A4 trong `bang_chi_phi.md`, Mục 1 và 3 hồ sơ.
 - Commit `c2d2c36`: B1–B4 trong `bang_chi_phi.md`, Mục 2 hồ sơ.
+- Commit `0b3d279`: `co_mau`, D1 và E1 trong `lab13.py`; E1 và E2 trong `chi_so.md`; Mục 7 hồ sơ; báo cáo cá nhân này.
 - `src/lab13.py`: hàm `co_mau`, khối D1 và E1.
 - `report/team/chi_so.md`: số E1 và bảng E2.
 - Máy thứ 2 (Linux, Python 3.14): `python lab13.py` chạy hết A1 → E1; `yaml.safe_load` đọc được `pilot_plan.yaml`; `git diff --stat` không có thay đổi ở `lab13_starter.py`, hai file CSV và `MSSV_HoTen.md`.

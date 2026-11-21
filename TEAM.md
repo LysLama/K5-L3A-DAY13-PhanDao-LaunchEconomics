@@ -73,7 +73,7 @@ Người kiểm số ở CP1–CP2 (`report/team/bang_chi_phi.md`), nhận vai N
 
 ### Bằng chứng
 
-- Commit `563a57c`, `0ccf501`, `c2d2c36` và commit CP4–CP5
+- Commit `563a57c` (Chặng 0), `0ccf501` (A1–A4), `c2d2c36` (B1–B4), `0b3d279` (D1, E1, E2)
 - `src/lab13.py` (khối D1, E1), `report/team/bang_chi_phi.md`, `report/team/chi_so.md`
 - `report/team/2A202603442_NguyenDacTuanNghia.md`
 
