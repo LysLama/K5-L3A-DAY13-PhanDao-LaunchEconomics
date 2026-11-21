@@ -2,17 +2,19 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
-- Lớp: L3A hoặc L3B
-- Repo nhóm: `K5-L3A-DAY13-TenNhom-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- Tên nhóm: PhanDao
+- Lớp: L3A
+- Repo nhóm: `K5-L3A-DAY13-PhanDao-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
+- URL repo: https://github.com/LysLama/K5-L3A-DAY13-PhanDao-LaunchEconomics
+- Nhánh nộp: `main`
+- Commit chốt: (điền khi push bản cuối)
 
 ## Thành viên
 
 | STT | Họ tên                   | MSSV        | Email                       | GitHub                                                     | Vai trò |
 | --: | -------------------------- | ----------- | --------------------------- | ---------------------------------------------------------- | -------- |
 |   1 | Phạm Trung Kiên          | 2A202603479 | 26ai.kienpt@vinuni.edu.vn   | [github.com/kienpham0607](https://github.com/kienpham0607)  | Người viết code GĐ1 (TV1) |
-|   2 | Nguyễn Đắc Tuấn Nghĩa | 2A202603442 | 26ai.nghiandt@vinuni.edu.vn | [github.com/dacnghia-lx](https://github.com/dacnghia-lx)    |          |
+|   2 | Nguyễn Đắc Tuấn Nghĩa | 2A202603442 | 26ai.nghiandt@vinuni.edu.vn | [github.com/dacnghia-lx](https://github.com/dacnghia-lx)    | TV2 · Người kiểm số (CP1–CP2) → Người viết code (CP3–CP5) |
 |   3 | Phạm Thanh Tùng          | 2A202603446 | 26ai.tungpt@vinuni.edu.vn   | [github.com/hunter2996](https://github.com/hunter2996)      |          |
 |   4 | Lý Thanh Lâm             | 2A202603475 | 26ai.lamlt@vinuni.edu.vn    | [github.com/LysLama](https://github.com/LysLama)            | Leader   |
 
