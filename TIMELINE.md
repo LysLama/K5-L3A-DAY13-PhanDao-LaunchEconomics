@@ -78,116 +78,269 @@ flowchart LR
 
 ---
 
-## 4. Timeline chi tiết theo từng chặng
+## 4. Timeline chi tiết theo luồng công việc (theo thứ tự)
+
+### Lộ trình tổng quát (`14:00 – 23:59`)
+
+| Giờ | Chặng | Trọng tâm | Điểm | Sản phẩm chốt |
+|---|---|---|---:|---|
+| **14:00 – 14:10** | **Chặng 0** · Khởi động | Cài `.venv` trên ≥ 2 máy, phân vai `TEAM.md` | — | Môi trường chạy `lab13.py` |
+| **14:10 – 14:53** | **Chặng 1 (CP1)** · Nhiệm vụ A | A1 (3 phép thử) ➔ A2 ➔ A3 & A4 | 20đ | `lab13.py`, `bang_chi_phi.md` (A), Hồ sơ Mục 1 & 3 |
+| **14:53 – 15:20** | **Chặng 2 (CP2)** · Nhiệm vụ B | 9 kịch bản B1 ➔ B2 ➔ B3 & B4 | 15đ | `bang_chi_phi.md` (B), Hồ sơ Mục 2 |
+| **15:20 – 15:35** | **Giải lao & Đổi Coder** | Push CP1–CP2 ➔ Chuyển quyền code sang **TV2** | — | Máy TV2 pull & sẵn sàng |
+| **15:35 – 16:08** | **Chặng 3 (CP3)** · Nhiệm vụ C | 2 nhánh song song ➔ So nhãn ➔ Bảng 5 ca | 10đ | `bang_loi.md`, Hồ sơ Mục 5 |
+| **16:08 – 16:36** | **Chặng 4 (CP4)** · Nhiệm vụ D | Tính D1 ➔ Chốt D2 ➔ Điền `pilot_plan.yaml` | 15đ | `pilot_plan.yaml` (không `?`), Hồ sơ Mục 6 |
+| **16:36 – 17:00** | **Chặng 5 (CP5)** · Nhiệm vụ E | E1 (chỉ số & event) ➔ E2 (rủi ro) ➔ Chốt Hồ sơ | 10đ | `chi_so.md`, `ho_so_launch_v0.md` (1 trang, 7 mục) |
+| **17:00 – 17:45** | **Chặng 6** · Duyệt chéo Gate 2a | Chấm nhóm bạn ➔ Trình bày 1p & Hỏi đáp 1p | 30đ | `phieu_cham.md` |
+| **17:45 – 18:00** | **Chặng 7** · Đóng gói & Push | Test máy 2 ➔ Checklist ➔ Báo cáo ➔ Push `main` | — | `group_report.md`, `TEAM.md`, 4 file cá nhân |
+| **18:00 – 23:59** | **Chặng 8** · Hậu kiểm & LMS | Sửa bổ sung bằng commit mới ➔ Nộp link LMS | — | Cả 4 người nộp cùng link repo trước **23:59** |
+
+---
 
 ### Chặng 0 · Khởi động, phân vai & cài môi trường (`14:00 – 14:10` · 10 phút)
 
-| Thành viên | Việc cần làm ngay |
-|---|---|
-| **TV1 (Coder GĐ1)** | Cài `.venv` trong `src/`, cài `requirements.txt`, chạy thử `python lab13.py` (xác nhận lỗi `NotImplementedError` đúng khung) và đọc trước đoạn code `A1` trong `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`. |
-| **TV2 (Kiểm số)** | Cài `.venv` trên **máy thứ hai** (`python -c "import pandas, numpy, scipy, statsmodels, yaml; print('san sang')"`), đọc bảng giá & 6 công thức trong `docs/du_lieu_va_cong_thuc.md`. |
-| **TV3 (Gắn nhãn 1 / QA)** | Mở `CHECKPOINTS.md` và `RUBRIC.md`, tạo danh sách kiểm tra nhanh các điều kiện "Xong khi" và đọc bảng `chi_so.md` để nắm trước cấu trúc E1. |
-| **TV4 (Gắn nhãn 2 / Giữ hồ sơ)** | Điền thông tin nhóm (`L3A`, `PhanDao`, URL repo `K5-L3A-DAY13-PhanDao-LaunchEconomics`, bảng 4 thành viên) vào `TEAM.md` và phần đầu `report/team/ho_so_launch_v0.md`. |
+> **Luồng công việc:** `0.1 Cài môi trường & ghi tên nhóm` ➔ `0.2 Đọc tài liệu nền & vào vị trí CP1`
 
-- **Mốc xong (14:10):** Ít nhất **2 máy** chạy được môi trường Python; mọi người đã clone đúng repo nhóm `PhanDao`.
+#### Bước 0.1 · Thiết lập repo & môi trường (`14:00 – 14:05` · 5 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV1 & TV2** *(2 máy)* | Clone repo nhóm, vào `src/`, tạo `.venv` và cài `requirements.txt`. Chạy `python -c "import pandas, numpy, scipy, statsmodels, yaml; print('san sang')"` và chạy thử `python lab13.py` (thấy `NotImplementedError`). |
+| 2️⃣ | **TV4** *(Giữ hồ sơ)* | Điền thông tin nhóm (`L3A`, `PhanDao`, URL repo, bảng 4 thành viên) vào `TEAM.md`; điền dòng `Nhóm: PhanDao · Lớp: L3A` và gán sẵn vai trò phụ trách vào 7 dòng của `report/team/ho_so_launch_v0.md`. |
+| 3️⃣ | **TV3** *(QA)* | Mở `CHECKPOINTS.md` và `RUBRIC.md` để theo dõi điều kiện "Xong khi" xuyên suốt buổi. |
 
----
+#### Bước 0.2 · Đọc trước phần việc CP1 (`14:05 – 14:10` · 5 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV1** *(Coder GĐ1)* | Đọc hướng dẫn `A1` và `A2` trong `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`. |
+| 2️⃣ | **TV2** *(Kiểm số)* | Nắm bảng giá giả định và 6 công thức trong `docs/du_lieu_va_cong_thuc.md`. |
+| 3️⃣ | **TV3 & TV4** | Đọc trước cấu trúc bảng trong `report/team/bang_chi_phi.md` và `report/team/chi_so.md`. |
 
-### Chặng 1 · CP1 — Nhiệm vụ A: Mô hình chi phí mỗi việc thành công (`14:10 – 14:53` · 40 phút làm + 3 phút chữa · **20 điểm**)
-
-| Thời gian | TV1 (Coder GĐ1) | TV2 (Kiểm số) | TV3 (Gắn nhãn 1 / QA) | TV4 (Giữ hồ sơ) |
-|---|---|---|---|---|
-| **14:10 – 14:20** *(10p)* | Viết 3 hàm **A1** trong `src/lab13.py`; chạy tới khi in `Ba phép thử đáp án biết trước: ĐẠT` (`1,20 · 1,25 · 1,25`). | Tính tay kiểm chứng lại 3 phép thử A1; điền bảng **A1** vào `report/team/bang_chi_phi.md`. | Kiểm tra điều kiện dừng A1: chưa đạt 3/3 thì **không cho qua A2**. | Khởi tạo khung 7 mục trong `ho_so_launch_v0.md`, ghi sẵn tên vai trò phụ trách từng mục. |
-| **14:20 – 14:40** *(20p)* | Viết `mo_hinh(runs, reqs, ...)` (**A2**) có đủ tham số mặc định cho B (`gia_vao`, `gia_ra`, `gia_tool`, `luong_phut`, `he_so_xem_lai`, `he_so_lam_lai`, `max_lan_chay`). Đảm bảo đọc CSV có `keep_default_na=False`. | Chọn ngẫu nhiên 1–2 dòng hoặc tổng cộng trên CSV tính tay đối chiếu tiền token/tool (`token` phải chia `1.000`). Điền bảng **A2** (9 dòng) vào `bang_chi_phi.md`. | Rà lỗi hay gặp: tử số tính **mọi** lần chạy (kể cả lỗi), mẫu số chỉ đếm `ket_qua == 'thanh_cong'`; kiểm tra gắn nhãn `simulated`. | Ghi trước các câu trả lời A2 (gấp bao nhiêu lần hoá đơn; khoản nào lớn nhất %) ≤ 3 dòng, có số. |
-| **14:40 – 14:50** *(10p)* | Chạy **A3** (lặp theo 4 giá trị cột `loai`) + in tỉ lệ `status == 'ok'` theo từng `attempt` và `loai`. Tính thêm **A4** (cố định 40 triệu/tháng cho `noi_dia + hang_nang`). | Điền bảng **A3** (4 dòng) và **A4** (2 mức khối lượng) vào `bang_chi_phi.md`; tính lại tổng hệ thống khi cộng phần chuyển nhân viên (`× 12.000 đ`). | Đối chiếu câu trả lời A3: `quoc_te` không đáng chạy và chạy lại 3 lần có giúp không (dựa vào tỉ lệ thành công và số lần chạy/yc). | Điền **Mục 1** (Chi phí/việc thành công, nhãn `Giả lập`) và **Mục 3** (So với 12.000 đ, nhãn `Giả lập`) vào `ho_so_launch_v0.md`. |
-| **14:50 – 14:53** *(3p)* | **Chữa bài trên slide:** Đối chiếu mọi con số A1–A4 (phải lệch ≤ 2%). Nếu lệch > 2%, sửa ngay tại chỗ vì CP2 dùng lại `mo_hinh`. Commit `cp1`. | | | |
-
-- **Mốc xong CP1:** `python lab13.py` in `ĐẠT` + bảng A2, A3, A4; `bang_chi_phi.md` đủ phần A; `ho_so_launch_v0.md` xong Mục 1 & 3.
+- ✅ **Mốc xong (14:10):** Ít nhất **2 máy** chạy được môi trường Python; `TEAM.md` và đầu `ho_so_launch_v0.md` đã điền thông tin nhóm.
 
 ---
 
-### Chặng 2 · CP2 — Nhiệm vụ B: Bảng độ nhạy (`14:53 – 15:20` · 25 phút làm + 2 phút chữa · **15 điểm**)
+### Chặng 1 · CP1 — Nhiệm vụ A: Mô hình chi phí mỗi việc thành công (`14:10 – 14:53` · 40p làm + 3p chữa · **20 điểm**)
 
-| Thời gian | TV1 (Coder GĐ1) | TV2 (Kiểm số) | TV3 (Gắn nhãn 1 / QA) | TV4 (Giữ hồ sơ) |
-|---|---|---|---|---|
-| **14:53 – 15:05** *(12p)* | Code vòng lặp **B1** gọi `mo_hinh` cho 9 kịch bản (`TODO CP2`), lưu ý xử lý đúng `max_lan_chay` (`attempt <= max`, `so_lan_chay > max` coi là `chuyen_nhan_vien`, phút simulated = 0). | Kiểm tra quy luật tuyến tính: mỗi kịch bản "giảm một nửa" phải giảm đúng bằng nửa mức tăng của kịch bản "gấp đôi". Điền 9 dòng **B1** vào `bang_chi_phi.md`. | Chuẩn bị trước phần đọc đề **Nhiệm vụ C** (hiểu rõ 5 định nghĩa lỗi Google PAIR) để 15:35 vào việc ngay. | Ghi chú 3 yếu tố nhạy nhất dự kiến vào nháp `ho_so_launch_v0.md`. |
-| **15:05 – 15:18** *(13p)* | Chạy **B2** (đổi cặp token ×2 & xem lại ×2), **B3** (chi phí cả hệ thống ở giới hạn 1, 2, 3 lần chạy), **B4** (xem lại 100% cho `noi_dia + hang_nang` với 9 phút làm lại và độ nhạy 15,3 phút thực tế). | Điền **B2** (xếp hạng top 3 yếu tố), bảng **B3** và câu trả lời **B3, B4** vào `bang_chi_phi.md` (≤ 3 dòng/câu, có đủ số). | Kiểm tra xem B3 có phân biệt được "tối ưu chi phí/việc thành công (1 lần)" vs "rẻ nhất cả hệ thống (2 lần)" không. | Cập nhật **Mục 2** (3 yếu tố nhạy nhất, nhãn `Giả lập`) vào `ho_so_launch_v0.md`. |
-| **15:18 – 15:20** *(2p)* | **Chữa bài trên slide:** Đối chiếu B1–B4 (lệch ≤ 2%). Phần nào chưa gõ kịp vào markdown sẽ hoàn thiện trong 8 phút đầu CP3. | | | |
+> **Luồng công việc:** `1.1 Khóa test A1` ➔ `1.2 Code & đối chiếu A2` ➔ `1.3 Tách loại A3 & cố định A4` ➔ `1.4 Chữa slide & Commit`
+
+#### Bước 1.1 · Viết và vượt qua 3 phép thử A1 (`14:10 – 14:20` · 10 phút) — *Bắt buộc đạt trước khi sang 1.2*
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV1** *(Coder GĐ1)* | Viết 3 hàm A1 trong `src/lab13.py`; chạy tới khi in `Ba phép thử đáp án biết trước: ĐẠT` (`1,20 · 1,25 · 1,25`). |
+| 2️⃣ | **TV2** *(Kiểm số)* | Tính tay kiểm chứng lại 3 phép thử và điền bảng **A1** vào `report/team/bang_chi_phi.md`. |
+| 3️⃣ | **TV3** *(QA)* | Kiểm tra gate A1: chưa in `ĐẠT` đủ 3 phép thử thì **chặn không cho qua Bước 1.2**. |
+| 4️⃣ | **TV4** *(Giữ hồ sơ)* | Chuẩn bị sẵn các ô Mục 1 và Mục 3 trong `report/team/ho_so_launch_v0.md`. |
+
+#### Bước 1.2 · Mô hình chi phí từ trace A2 (`14:20 – 14:40` · 20 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV1** *(Coder GĐ1)* | Viết `mo_hinh(runs, reqs, ...)` đủ tham số mặc định cho B (`gia_vao`, `gia_ra`, `gia_tool`, `luong_phut`, `he_so_xem_lai`, `he_so_lam_lai`, `max_lan_chay`); đọc CSV có `keep_default_na=False`. |
+| 2️⃣ | **TV2** *(Kiểm số)* | Đối chiếu tính tay (tổng token/1.000, tool, phút simulated); điền đủ 9 dòng bảng **A2** vào `report/team/bang_chi_phi.md`. |
+| 3️⃣ | **TV3** *(QA)* | Kiểm tra 2 lỗi hay gặp: tử số tính **mọi** lần chạy (kể cả lỗi), mẫu số chỉ đếm `ket_qua == 'thanh_cong'`; kiểm tra gắn nhãn `simulated`. |
+| 4️⃣ | **TV4** *(Giữ hồ sơ)* | Điền 2 câu trả lời A2 (gấp bao nhiêu lần hoá đơn; khoản nào chiếm % lớn nhất) vào `bang_chi_phi.md` (**≤ 3 dòng/câu, có số**). |
+
+#### Bước 1.3 · Tách theo loại A3 & Chi phí cố định A4 (`14:40 – 14:50` · 10 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV1** *(Coder GĐ1)* | Chạy **A3** theo từng giá trị `loai` + tỉ lệ `ok` theo `attempt`; tính **A4** (cố định 40 triệu/tháng cho phạm vi `noi_dia + hang_nang`). |
+| 2️⃣ | **TV2** *(Kiểm số)* | Điền bảng **A3** (4 dòng) và **A4** (2 mức khối lượng) vào `bang_chi_phi.md`; tính lại chi phí cả hệ thống khi cộng phần chuyển nhân viên (`× 12.000 đ`). |
+| 3️⃣ | **TV3** *(QA)* | Soát câu trả lời A3 (`quoc_te` không đáng chạy và chạy lại 3 lần có giúp không, kèm dẫn chứng từ 2 cột giữa) và câu trả lời A4. |
+| 4️⃣ | **TV4** *(Giữ hồ sơ)* | Cập nhật **Mục 1** (Chi phí/việc thành công, trạng thái `Giả lập`) và **Mục 3** (So với 12.000 đ, trạng thái `Giả lập`) vào `ho_so_launch_v0.md`. |
+
+#### Bước 1.4 · Chữa bài & Đồng bộ (`14:50 – 14:53` · 3 phút)
+- 👥 **Cả nhóm:** Đối chiếu toàn bộ số A1–A4 với slide đáp án (sai số cho phép `≤ 2%`). Nếu lệch > 2%, sửa ngay `mo_hinh` trước khi sang Chặng 2. **TV1** commit mốc `cp1`.
+- ✅ **Mốc xong CP1:** `python lab13.py` in `ĐẠT` + bảng A2, A3, A4; `bang_chi_phi.md` xong phần A; `ho_so_launch_v0.md` xong Mục 1 & 3.
 
 ---
 
-### Giải lao & Bàn giao quyền Coder (`15:20 – 15:35` · 15 phút)
+### Chặng 2 · CP2 — Nhiệm vụ B: Bảng độ nhạy (`14:53 – 15:20` · 25p làm + 2p chữa · **15 điểm**)
 
-- Nghỉ giải lao tại chỗ; **TV1** commit/push code hết CP2 (`git commit -m "cp1-cp2: cost model and sensitivity"`).
-- **TV2** `git pull` về máy mình để chuẩn bị **tiếp nhận vai trò Người viết code từ CP3/CP4 trở đi** (đúng yêu cầu trong `TEAM.md`).
+> **Luồng công việc:** `2.1 Đổi từng yếu tố B1` ➔ `2.2 Đổi cặp B2, giới hạn B3 & xem lại 100% B4` ➔ `2.3 Chữa slide`
+
+#### Bước 2.1 · Chạy 9 kịch bản B1 (`14:53 – 15:05` · 12 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV1** *(Coder GĐ1)* | Viết vòng lặp **B1** gọi `mo_hinh` cho 9 kịch bản ở `TODO CP2`; xử lý đúng `max_lan_chay` (`attempt <= max`, `so_lan_chay > max` coi là `chuyen_nhan_vien`, phút simulated = 0). |
+| 2️⃣ | **TV2** *(Kiểm số)* | Tự kiểm tra tuyến tính: mức giảm của kịch bản "giảm một nửa" phải bằng đúng nửa mức tăng của "gấp đôi". Điền đủ 9 dòng **B1** vào `bang_chi_phi.md`. |
+| 3️⃣ | **TV3** *(QA)* | Đọc trước đề **20 ca lỗi & 5 loại Google PAIR** để chuẩn bị cho CP3 ngay sau giờ giải lao. |
+| 4️⃣ | **TV4** *(Giữ hồ sơ)* | Ghi chú trước 3 yếu tố ảnh hưởng mạnh nhất vào nháp `ho_so_launch_v0.md`. |
+
+#### Bước 2.2 · Chạy B2, B3 và B4 (`15:05 – 15:18` · 13 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV1** *(Coder GĐ1)* | Tính **B2** (token ×2 & xem lại ×2 cùng lúc), **B3** (chi phí cả hệ thống ở giới hạn 1, 2, 3 lần chạy) và **B4** (xem lại 100% cho `noi_dia + hang_nang` với 9 phút làm lại và độ nhạy theo trung bình thực tế ~15,3 phút). |
+| 2️⃣ | **TV2** *(Kiểm số)* | Điền **B2** (top 3 yếu tố), bảng **B3** và câu trả lời **B3, B4** vào `bang_chi_phi.md` (**≤ 3 dòng/câu, đủ số**). |
+| 3️⃣ | **TV3** *(QA)* | Kiểm tra câu B3 đã phân biệt được giới hạn rẻ nhất cả hệ thống (`2 lần`) với chi phí/việc thành công thấp nhất (`1 lần`) chưa; kiểm tra B4 ghi cả 2 con số + mức hoà vốn. |
+| 4️⃣ | **TV4** *(Giữ hồ sơ)* | Cập nhật **Mục 2** (Ba yếu tố nhạy nhất, trạng thái `Giả lập`) vào `ho_so_launch_v0.md`. |
+
+#### Bước 2.3 · Chữa bài trên slide (`15:18 – 15:20` · 2 phút)
+- 👥 **Cả nhóm:** Đối chiếu số B1–B4 (sai số `≤ 2%`). Nếu còn phần trình bày markdown B chưa gọn sẽ hoàn thiện trong 8 phút đầu của Chặng 3.
 
 ---
 
-### Chặng 3 · CP3 — Nhiệm vụ C: Bảng lỗi & Cách khắc phục (`15:35 – 16:08` · 30 phút làm + 3 phút chữa · **10 điểm**)
+### Nghỉ giải lao & Bàn giao quyền Coder (`15:20 – 15:35` · 15 phút)
+
+> **Luồng chuyển giao:** `TV1 push code CP1–CP2` ➔ `TV2 pull về máy 2` ➔ `Đổi vai Người viết code`
+
+| Thứ tự | Thành viên | Việc chuyển giao |
+|---|---|---|
+| 1️⃣ | **TV1** *(Coder GĐ1)* | Commit & push toàn bộ code `src/lab13.py` và `bang_chi_phi.md` hết CP2 lên `main`. |
+| 2️⃣ | **TV2** *(Coder GĐ2)* | Chạy `git pull --rebase origin main` trên **máy thứ 2**, chính thức nhận vai **Người viết code** từ Chặng 3–5 (theo yêu cầu `TEAM.md`). |
+| 3️⃣ | **TV3 & TV4** | Chuẩn bị mở `docs/Ngay13_Lab13_De_bai_hoc_vien.docx` (mục *Hai mươi ca lỗi*) để tách riêng làm việc ngay lúc 15:35. |
+
+---
+
+### Chặng 3 · CP3 — Nhiệm vụ C: Bảng lỗi & Cách khắc phục (`15:35 – 16:08` · 30p làm + 3p chữa · **10 điểm**)
+
+> **Luồng công việc:** `3.1 Chạy 2 nhánh song song (8p)` ➔ `3.2 So nhãn & tính đồng thuận (3p)` ➔ `3.3 Thống nhất ca lệch (5p)` ➔ `3.4 Bảng khắc phục 5 ca (14p)` ➔ `3.5 Chữa slide (3p)`
 
 > [!IMPORTANT]
-> **Quy tắc liêm chính bắt buộc:** Trong 8 phút đầu, TV3 và TV4 **ngồi tách nhau, gắn độc lập 20 ca lỗi, tuyệt đối không trao đổi** và **không sửa bộ nhãn độc lập sau khi đã so**.
+> **Quy tắc liêm chính ở Bước 3.1:** **TV3** và **TV4** ngồi tách nhau, gắn độc lập 20 ca lỗi theo **nguyên nhân gốc**, **tuyệt đối không trao đổi** và **không sửa bộ nhãn độc lập sau khi đã so**.
 
-| Thời gian | TV1 (Hỗ trợ / Kiểm số) | TV2 (Coder GĐ2) | TV3 (Gắn nhãn 1) | TV4 (Gắn nhãn 2 / Hồ sơ) |
-|---|---|---|---|---|
-| **15:35 – 15:43** *(8p)* | Rà soát lại toàn bộ số liệu và câu trả lời A1–B4 trong `report/team/bang_chi_phi.md` (nhãn `simulated`, độ dài ≤ 3 dòng). | Kéo code mới nhất, chạy lại `src/lab13.py` trên máy 2 để xác nhận khớp 100%, chuẩn bị khung code **D1**. | **Gắn nhãn độc lập 20 ca lỗi** (trong `docs/Ngay13_Lab13_De_bai_hoc_vien.docx`) vào bản ghi riêng theo 5 loại Google PAIR (gắn theo **nguyên nhân gốc**). | **Gắn nhãn độc lập 20 ca lỗi** (ngồi tách TV3, không trao đổi) theo 5 loại Google PAIR. |
-| **15:43 – 15:46** *(3p)* | Hỗ trợ ghi nhận thống kê tỉ lệ đồng thuận. | Hoàn tất dọn sạch format `bang_chi_phi.md`. | **So nhãn với TV4**, đếm số ca trùng và tính `đồng thuận = số ca trùng / 20` (mục tiêu ≥ 80% tức ≥ 16/20). | Nhập cả 2 bộ nhãn độc lập vào `report/team/bang_loi.md`. |
-| **15:46 – 15:51** *(5p)* | **Cả nhóm** tranh luận nhanh các ca không trùng, thống nhất nhãn chung và viết **1 câu quy tắc phân biệt** cho từng ca lệch (nếu đồng thuận < 80% phải sửa lại định nghĩa 5 loại). | | | |
-| **15:51 – 16:05** *(14p)* | Đề xuất cách phát hiện đo được (tên event, ngưỡng, tần suất) cho ca **Hệ thống** & **Giới hạn**. | Đề xuất cách phát hiện cho ca **Ngầm** (audit mẫu) & **Do người dùng**. | Chọn 5 ca (mỗi loại 1 ca), rà đảm bảo cột "Ai phụ trách" ghi **1 vai trò cụ thể** (VD: Kỹ sư trưởng agent, PM trợ lý hoàn phí, Trưởng nhóm CSKH, Kế toán trưởng), **không ghi "cả đội"**. | Hoàn thiện bảng khắc phục 5 ca trong `report/team/bang_loi.md` và cập nhật **Mục 5** vào `ho_so_launch_v0.md`. |
-| **16:05 – 16:08** *(3p)* | **Chữa bài trên slide:** Đối chiếu đáp án 20 ca (yêu cầu khớp đáp án ≥ 16/20 ca). Commit `cp3`. | | | |
+#### Bước 3.1 · Chia 2 nhánh làm việc song song (`15:35 – 15:43` · 8 phút)
+| Nhánh | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 🔀 **Nhánh A** *(Gắn nhãn)* | **TV3 & TV4** | Ngồi tách nhau, đọc 20 ca lỗi trong `docs/Ngay13_Lab13_De_bai_hoc_vien.docx` và gắn nhãn độc lập theo 5 loại Google PAIR (*Do người dùng · Hệ thống · Ngữ cảnh · Giới hạn hệ thống · Ngầm*). |
+| 🔀 **Nhánh B** *(Hoàn thiện B)* | **TV1 & TV2** | **TV1** rà sạch định dạng, nhãn `simulated` và giới hạn ≤ 3 dòng trong `bang_chi_phi.md`; **TV2** chạy test `src/lab13.py` trên máy 2 và dựng khung code **D1**. |
+
+#### Bước 3.2 · So nhãn & Tính tỉ lệ đồng thuận (`15:43 – 15:46` · 3 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV3 & TV4** | So hai bộ nhãn độc lập, đếm số ca trùng và tính `đồng thuận = số ca trùng / 20` (mục tiêu `≥ 80%`, tức `≥ 16/20`). |
+| 2️⃣ | **TV4** *(Giữ hồ sơ)* | Nhập nguyên trạng cả 2 bộ nhãn độc lập và tỉ lệ đồng thuận vào `report/team/bang_loi.md`. |
+
+#### Bước 3.3 · Thống nhất các ca lệch (`15:46 – 15:51` · 5 phút)
+- 👥 **Cả nhóm:** Thảo luận nhanh các ca không trùng, chốt cột `Nhãn thống nhất` và viết **1 câu quy tắc phân biệt** cho mỗi ca lệch vào `bang_loi.md`. *(Nếu đồng thuận < 80%, phải viết lại định nghĩa 5 loại trước khi đi tiếp)*.
+
+#### Bước 3.4 · Chọn 5 ca & Lập bảng khắc phục (`15:51 – 16:05` · 14 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV3** *(QA)* | Chọn 5 ca đại diện đủ **5 loại lỗi**; rà đảm bảo cách phát hiện **đo được** (event, ngưỡng, tần suất) và cột `Ai phụ trách` ghi **1 vai trò cụ thể**, không ghi `"cả đội"`. |
+| 2️⃣ | **TV1** | Đề xuất cách phát hiện & khắc phục cho ca **Hệ thống** và **Giới hạn hệ thống**. |
+| 3️⃣ | **TV2** *(Coder GĐ2)* | Đề xuất cách phát hiện & khắc phục cho ca **Ngầm** (audit mẫu) và **Do người dùng**. |
+| 4️⃣ | **TV4** *(Giữ hồ sơ)* | Bổ sung ca **Ngữ cảnh**, hoàn thiện `report/team/bang_loi.md` và cập nhật **Mục 5** (`Xong, có bằng chứng`) vào `ho_so_launch_v0.md`. |
+
+#### Bước 3.5 · Chữa bài trên slide (`16:05 – 16:08` · 3 phút)
+- 👥 **Cả nhóm:** Đối chiếu nhãn thống nhất với đáp án 20 ca (yêu cầu khớp `≥ 16/20 ca`). **TV4** commit mốc `cp3`.
+- ✅ **Mốc xong CP3:** `bang_loi.md` có đủ 2 bộ nhãn độc lập, tỉ lệ đồng thuận `≥ 80%`, quy tắc phân biệt, bảng khắc phục đủ 5 loại; `ho_so_launch_v0.md` xong Mục 5.
 
 ---
 
-### Chặng 4 · CP4 — Nhiệm vụ D: `pilot_plan.yaml` (`16:08 – 16:36` · 25 phút làm + 3 phút chữa · **15 điểm**)
+### Chặng 4 · CP4 — Nhiệm vụ D: `pilot_plan.yaml` (`16:08 – 16:36` · 25p làm + 3p chữa · **15 điểm**)
 
-| Thời gian | TV1 (Hỗ trợ YAML / Code) | TV2 (Coder GĐ2) | TV3 (Gắn nhãn 1 / QA) | TV4 (Giữ hồ sơ) |
-|---|---|---|---|---|
-| **16:08 – 16:20** *(12p)* | Tính tay câu **e** (mức chênh 6 điểm với 20 người/nhóm → `m ≥ 299`, `DE = 6,96`) và kiểm tra power thực nếu tác động thật chỉ 5 điểm (`NormalIndPower`, ~0,64). | Code mục **D1** ở `TODO CP4` trong `src/lab13.py` (tính 5 câu **a, b, c, d, e**) + tính tỉ lệ `mo_lai_trong_7_ngay` hiện tại trên toàn mẫu & trong phạm vi `noi_dia + hang_nang`. | Tổng hợp các câu trả lời **D2** (5 câu kiểm tra "tách được tác động": đối chứng cùng thời gian, ngẫu nhiên phân tầng depot, giảm spillover, viết trước, ≥ 20 cụm/nhóm). | Soạn thảo khung giải trình **đánh đổi** (vì 40 nhân viên không đủ 1.251 mẫu ở MDE 5 điểm, buộc chọn 20+20 nhân viên ở MDE 6 điểm). |
-| **16:20 – 16:25** *(5p)* | **Cả nhóm** thống nhất phương án chia cụm theo nhân viên (`20 + 20`, `mde = 0.06`) và chốt ngưỡng luật dừng (so với tỉ lệ mở lại hiện tại ~4,25% để tránh dừng nhầm tuần 1). | | | |
-| **16:25 – 16:33** *(8p)* | Điền toàn bộ các trường của `report/team/pilot_plan.yaml` (`owner`, `scope`, `assignment`, `primary_metric`, `identifiability`, `rollback`, `decision_date`, `simulated_inputs`) và ghi kết quả D1, D2 vào phần comment `#` đầu file. | Chạy kiểm tra cú pháp YAML (`yaml.safe_load`) và lệnh tìm dấu `?` còn sót ngoài comment. | Soạn & kiểm tra **ít nhất 3 luật dừng** (An toàn, Chi phí, Sử dụng) đúng 4 vế: `NẾU ... TRONG ... THÌ ... KHÔNG THÌ ...`, có ngưỡng + thời hạn + 1 vai trò có quyền dừng. | Cập nhật **Mục 6** (Pilot plan, trạng thái `Xong, có bằng chứng`) vào `report/team/ho_so_launch_v0.md`. |
-| **16:33 – 16:36** *(3p)* | **Chữa bài trên slide:** Đối chiếu 5 số D1 (≤ 2%) và cấu trúc `pilot_plan.yaml`. Commit `cp4`. | | | |
+> **Luồng công việc:** `4.1 Tính cỡ mẫu D1 & chuẩn bị D2 (12p)` ➔ `4.2 Chốt phương án chia nhóm (5p)` ➔ `4.3 Viết & kiểm tra YAML (8p)` ➔ `4.4 Chữa slide (3p)`
+
+#### Bước 4.1 · Tính 5 câu D1 & Tỉ lệ an toàn hiện tại (`16:08 – 16:20` · 12 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV2** *(Coder GĐ2)* | Code mục **D1** ở `TODO CP4` trong `src/lab13.py` (tính 5 câu **a, b, c, d, e**) và tính tỉ lệ `mo_lai_trong_7_ngay` hiện tại trên toàn mẫu & phạm vi `noi_dia + hang_nang`. |
+| 2️⃣ | **TV1** *(Hỗ trợ Code/YAML)* | Tính tay kiểm chứng câu **e** (mức chênh 6 điểm, 20 người/nhóm → `m ≥ 299`, `DE = 6,96`) và kiểm tra power thực nếu tác động thật là 5 điểm (`NormalIndPower`, ~0,64). |
+| 3️⃣ | **TV3** *(QA)* | Trả lời trước 5 câu kiểm tra "tách được tác động" (**D2**: đối chứng cùng thời gian, ngẫu nhiên phân tầng depot, giảm spillover, viết trước, ≥ 20 cụm/nhóm). |
+| 4️⃣ | **TV4** *(Giữ hồ sơ)* | Soạn giải trình **đánh đổi** (40 nhân viên không đủ mẫu ở MDE 5 điểm nên chọn `20 + 20` nhân viên ở MDE 6 điểm, chấp nhận power ~0,64 ở mức 5 điểm). |
+
+#### Bước 4.2 · Thống nhất phương án & Ngưỡng dừng (`16:20 – 16:25` · 5 phút)
+- 👥 **Cả nhóm:** Chốt cách chia cụm (`unit: staff`, 20 + 20 nhân viên, `mde: 0.06`), so tỉ lệ mở lại hiện tại (~4,25% toàn mẫu / 3,97% trong phạm vi) để chọn ngưỡng an toàn không bị dừng nhầm ngay tuần 1.
+
+#### Bước 4.3 · Hoàn thiện & Kiểm tra `pilot_plan.yaml` (`16:25 – 16:33` · 8 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV1** | Điền kết quả **D1, D2, đánh đổi** vào phần chú thích `#` đầu file và điền đầy đủ các trường YAML (`owner`, `scope`, `assignment`, `primary_metric`, `identifiability`, `rollback`, `decision_date`, `simulated_inputs`) trong `report/team/pilot_plan.yaml`. |
+| 2️⃣ | **TV3** *(QA)* | Soạn & rà **ít nhất 3 luật dừng** (An toàn, Chi phí, Sử dụng) đúng mẫu `NẾU ... TRONG ... THÌ ... KHÔNG THÌ ...`, có đủ ngưỡng, thời hạn và 1 vai trò có quyền dừng. |
+| 3️⃣ | **TV2** *(Coder GĐ2)* | Chạy kiểm tra cú pháp `yaml.safe_load` và lệnh lọc dấu `?` còn sót ngoài dòng chú thích `#`. |
+| 4️⃣ | **TV4** *(Giữ hồ sơ)* | Cập nhật **Mục 6** (`Pilot plan`, trạng thái `Xong, có bằng chứng`) vào `ho_so_launch_v0.md`. |
+
+#### Bước 4.4 · Chữa bài trên slide (`16:33 – 16:36` · 3 phút)
+- 👥 **Cả nhóm:** Đối chiếu 5 kết quả D1 (sai số `≤ 2%`) và các trường YAML. **TV1** commit mốc `cp4`.
+- ✅ **Mốc xong CP4:** `pilot_plan.yaml` pass `yaml.safe_load`, không còn dấu `?` ngoài comment, đủ 3 luật dừng 4 vế.
 
 ---
 
-### Chặng 5 · CP5 — Nhiệm vụ E: Chỉ số, Rủi ro kinh tế & Hồ sơ Launch v0 (`16:36 – 17:00` · 20 phút làm + 4 phút chữa · **10 điểm**)
+### Chặng 5 · CP5 — Nhiệm vụ E: Chỉ số, Rủi ro & Hồ sơ Launch v0 (`16:36 – 17:00` · 20p làm + 4p chữa · **10 điểm**)
 
-| Thời gian | TV1 (Event & Đối chiếu) | TV2 (Coder GĐ2) | TV3 (Chủ trì `chi_so.md`) | TV4 (Chủ trì `ho_so_launch_v0.md`) |
-|---|---|---|---|---|
-| **16:36 – 16:44** *(8p)* | Liệt kê **tối thiểu 6 event** (khuyến nghị 8–10 event đủ luồng) có `trace_id`, ai tạo, thuộc tính chính, thời điểm; kiểm tra chéo mỗi chỉ số tính từ event nào. | Thêm đoạn code tính 3 chỉ số **E1** trên 1.200 yêu cầu (`chinh`, `bo_qua`, `an_toan`) vào `src/lab13.py` và in ra đối chiếu. | Điền bảng **E1** trong `report/team/chi_so.md` (3 chỉ số tính thử + tự đề xuất thêm **1 chỉ số dùng** & **1 chỉ số an toàn**); đảm bảo viết *"chỉ số trong đợt chạy thử là…"*, không viết *"đã nâng"*. | Cập nhật **Mục 4** (Chỉ số chính, dùng, an toàn) vào `ho_so_launch_v0.md`. |
-| **16:44 – 16:48** *(4p)* | Kiểm tra khớp số giữa `bang_chi_phi.md` và bảng rủi ro. | Lấy số trực tiếp từ bảng độ nhạy B1/B4/A4 để điền bảng **E2 · Rủi ro kinh tế** (≥ 2 dòng, khuyến nghị 3 dòng). | Hoàn thiện định dạng `report/team/chi_so.md`, gán người phụ trách là 1 vai trò cụ thể cho từng rủi ro. | Cập nhật **Mục 7** (Rủi ro kinh tế, nhãn `Giả lập`) vào `ho_so_launch_v0.md`. |
-| **16:48 – 16:56** *(8p)* | **Cả nhóm** rà 7 mục trên 1 trang `ho_so_launch_v0.md` và **chốt đề xuất cuối**: `Go` / `Go có điều kiện` / `No-go` (nếu `Go có điều kiện`: ghi rõ từng điều kiện, người phụ trách và ngày kiểm tra; nêu cả con số bất lợi như xem lại 100% đắt bằng 0,98×–1,03× hoặc power 0,64 ở MDE 5 điểm). | | | Hoàn thiện `ho_so_launch_v0.md` gọn trong **1 trang**; chạy lệnh rà soát không có từ bị cấm (`production`). |
-| **16:56 – 17:00** *(4p)* | **Chữa bài trên slide & Gửi hồ sơ:** Đối chiếu 3 chỉ số E1; gửi `report/team/ho_so_launch_v0.md` cho nhóm hội đồng chấm chéo đúng **17:00**. Commit `cp5`. | | | |
+> **Luồng công việc:** `5.1 Chỉ số & Event E1 (8p)` ➔ `5.2 Rủi ro kinh tế E2 (4p)` ➔ `5.3 Chốt 1 trang Hồ sơ v0 E3 (8p)` ➔ `5.4 Chữa slide & Gửi duyệt chéo 17:00 (4p)`
+
+#### Bước 5.1 · Đặc tả chỉ số & Danh sách event E1 (`16:36 – 16:44` · 8 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV2** *(Coder GĐ2)* | Thêm code tính 3 chỉ số **E1** trên 1.200 yêu cầu (`chinh`, `bo_qua`, `an_toan`) vào `src/lab13.py` và xuất kết quả. |
+| 2️⃣ | **TV3** *(Chủ trì `chi_so.md`)* | Điền bảng **E1** trong `report/team/chi_so.md` (3 chỉ số + tự đề xuất **1 chỉ số dùng** & **1 chỉ số an toàn**); ghi đúng *"chỉ số trong đợt chạy thử là…"*, không viết *"đã nâng"*. |
+| 3️⃣ | **TV1** | Liệt kê **tối thiểu 6 event** (khuyến nghị 8–10 event) đều có `trace_id`, ai tạo, thuộc tính chính, thời điểm; viết mục **Kiểm tra chéo** event ↔ chỉ số vào `chi_so.md`. |
+| 4️⃣ | **TV4** *(Giữ hồ sơ)* | Cập nhật **Mục 4** (`Chỉ số chính, dùng, an toàn`, trạng thái `Xong, có bằng chứng`) vào `ho_so_launch_v0.md`. |
+
+#### Bước 5.2 · Rủi ro kinh tế E2 (`16:44 – 16:48` · 4 phút)
+| Thứ tự | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 1️⃣ | **TV2** *(Coder GĐ2)* | Lấy số trực tiếp từ bảng độ nhạy B1/B4/A4 (`bang_chi_phi.md`) điền **≥ 2 dòng rủi ro** (khuyến nghị 3 dòng) vào mục **E2** của `chi_so.md`. |
+| 2️⃣ | **TV1 & TV3** | Kiểm tra khớp số với `bang_chi_phi.md`, gắn nhãn `simulated` và gán **1 vai trò phụ trách** cụ thể cho mỗi dòng rủi ro. |
+| 3️⃣ | **TV4** *(Giữ hồ sơ)* | Cập nhật **Mục 7** (`Rủi ro kinh tế`, trạng thái `Giả lập`) vào `ho_so_launch_v0.md`. |
+
+#### Bước 5.3 · Chốt 1 trang Hồ sơ Launch v0 E3 (`16:48 – 16:56` · 8 phút)
+- 👥 **Cả nhóm:** Rà đủ 7 mục trên `report/team/ho_so_launch_v0.md` và thống nhất **đề xuất cuối** (`Go` / `Go có điều kiện` / `No-go`). Nếu chọn `Go có điều kiện`, ghi rõ từng điều kiện, **1 vai trò phụ trách** + **ngày kiểm tra**, đồng thời nêu thẳng các con số bất lợi (xem lại 100% đạt 0,98×–1,03×, power 0,64 ở MDE 5 điểm).
+- **TV4** *(Giữ hồ sơ)*: Chỉnh gói gọn `ho_so_launch_v0.md` trong **1 trang**; chạy lệnh kiểm tra đảm bảo không có từ `"production"`.
+
+#### Bước 5.4 · Chữa slide & Gửi hồ sơ lúc 17:00 (`16:56 – 17:00` · 4 phút)
+- 👥 **Cả nhóm:** Đối chiếu 3 chỉ số E1 trên slide; đúng **17:00** gửi `report/team/ho_so_launch_v0.md` cho nhóm hội đồng chấm chéo. **TV3 & TV4** commit mốc `cp5`.
+- ✅ **Mốc xong CP5:** `chi_so.md` đủ E1 + ≥ 6 event + E2; `ho_so_launch_v0.md` đủ 7 mục + đề xuất khớp bằng chứng, sẵn sàng lúc **17:00**.
 
 ---
 
 ### Chặng 6 · Duyệt chéo Gate 2a (`17:00 – 17:45` · 45 phút · **30 điểm hội đồng**)
 
-| Thời gian | Hoạt động chung | TV1 & TV2 (Đại diện đội trình bày) | TV3 & TV4 (Đại diện hội đồng chấm nhóm `n+1`) |
-|---|---|---|---|
-| **17:00 – 17:10** *(10p)* | Chốt link/file gửi hồ sơ sang nhóm bạn và nhận hồ sơ nhóm `n+1`. | Chuẩn bị kịch bản trình bày **đúng 1 phút** (tập trung 4 câu hỏi + con số bất lợi + điều kiện Go). | Đọc lướt hồ sơ nhóm `n+1` và mở sẵn `report/team/phieu_cham.md`. |
-| **17:10 – 17:25** *(15p)* | Đọc kỹ & chuẩn bị phản biện. | Dự phòng trả lời các câu hỏi bẫy (xem lại 100%, 20 cụm, ngưỡng an toàn 4,25%, power 0,64, ý nghĩa tử/mẫu số). | Chấm 3 tiêu chí (0 / 5 / 10 điểm) vào `phieu_cham.md` dựa hoàn toàn vào **bằng chứng số**, viết quyết định + 1 câu hỏi sắc bén. |
-| **17:25 – 17:40** *(15p)* | 5 cặp trình bày (3 phút/cặp: 1p trình + 1p công bố + 1p hỏi đáp). | **TV1** trình bày 1 phút; **TV2** trả lời câu hỏi phản biện từ hội đồng. | **TV3** công bố điểm/quyết định & đặt câu hỏi; **TV4** ghi lại câu trả lời của đội trình vào `phieu_cham.md`. |
-| **17:40 – 17:45** *(5p)* | Giảng viên chốt quyết định nào khớp bằng chứng. | Ghi nhận góp ý của giảng viên & hội đồng để cập nhật vào mục 4 & mục 7 của `group_report.md`. | Lưu và commit `report/team/phieu_cham.md`. |
+> **Luồng công việc:** `6.1 Gửi & nhận hồ sơ (10p)` ➔ `6.2 Chuẩn bị trình & chấm nhóm bạn (15p)` ➔ `6.3 Phiên trình bày 3p/cặp (15p)` ➔ `6.4 Giảng viên chốt (5p)`
+
+#### Bước 6.1 · Trao đổi hồ sơ giữa hai nhóm (`17:00 – 17:10` · 10 phút)
+- **TV4** gửi `ho_so_launch_v0.md` (kèm `pilot_plan.yaml` nếu hội đồng cần đối chiếu) sang nhóm hội đồng và nhận hồ sơ của nhóm `n+1`.
+
+#### Bước 6.2 · Song song: Chuẩn bị bảo vệ & Chấm nhóm `n+1` (`17:10 – 17:25` · 15 phút)
+| Nhánh | Thành viên | Việc cần làm & Đầu ra |
+|---|---|---|
+| 🔀 **Đội trình bày** | **TV1 & TV2** | Chuẩn bị bài nói **đúng 1 phút** (tóm tắt 4 câu hỏi + đề xuất + con số bất lợi); chuẩn bị đáp án cho các câu hỏi bẫy (xem lại 100%, 20 cụm, baseline mở lại 4,25%, power 0,64). |
+| 🔀 **Hội đồng chấm** | **TV3 & TV4** | Đọc hồ sơ nhóm `n+1`, chấm 3 tiêu chí (0 / 5 / 10 điểm) vào `report/team/phieu_cham.md` theo **bằng chứng số**, ghi quyết định + lý do + **1 câu hỏi phản biện**. |
+
+#### Bước 6.3 · Phiên trình bày & Hỏi đáp (`17:25 – 17:40` · 15 phút)
+| Thứ tự | Thành viên | Vai trò trong 3 phút/cặp |
+|---|---|---|
+| 1️⃣ | **TV1** | Trình bày hồ sơ của nhóm trong **1 phút**. |
+| 2️⃣ | **TV2** | Trả lời câu hỏi phản biện từ hội đồng trong **1 phút**. |
+| 3️⃣ | **TV3** | Khi nhóm mình làm hội đồng: công bố quyết định & đặt 1 câu hỏi cho nhóm `n+1` (**1 phút**). |
+| 4️⃣ | **TV4** | Ghi lại đầy đủ câu trả lời của đội trình (`nhóm n+1`) vào cuối file `report/team/phieu_cham.md`. |
+
+#### Bước 6.4 · Giảng viên chốt & Ghi nhận góp ý (`17:40 – 17:45` · 5 phút)
+- 👥 **Cả nhóm:** Nghe giảng viên chốt quyết định khớp bằng chứng; ghi lại điểm/nhận xét nhận được để điền vào Mục 4 & Mục 7 của `report/team/group_report.md`.
 
 ---
 
 ### Chặng 7 · Đóng gói, Kiểm tra chéo & Push GitHub (`17:45 – 18:00` · 15 phút)
 
-| Thành viên | Việc đóng gói cuối buổi |
+> **Luồng công việc:** `7.1 Viết báo cáo nhóm & cá nhân` ➔ `7.2 Chạy kiểm tra máy 2 & rà checklist` ➔ `7.3 Push bản cuối tại lớp`
+
+#### Bước 7.1 · Hoàn thiện báo cáo nhóm & 4 báo cáo cá nhân (`17:45 – 17:52` · 7 phút)
+| Thành viên | Việc cần làm |
 |---|---|
-| **TV1** | Kiểm tra `src/lab13.py` sạch sẽ, không hardcode sai đường dẫn, không sửa `lab13_starter.py` hay 2 file CSV; tự viết phần đóng góp trong `TEAM.md` và tạo `report/team/<MSSV>_<HoTen>.md`. |
-| **TV2** | **Chạy kiểm tra toàn bộ `src/lab13.py` và `pilot_plan.yaml` trên máy thứ hai** (khác máy TV1); xác nhận không lỗi; tự viết `TEAM.md` và `report/team/<MSSV>_<HoTen>.md`. |
-| **TV3** | Chạy checklist rà soát toàn bộ `report/team/`: nhãn `simulated`, không còn dấu `?` trong YAML, không ghi "cả đội", không có từ "production"; tự viết `TEAM.md` và `report/team/<MSSV>_<HoTen>.md`. |
-| **TV4** | Tổng hợp `report/team/group_report.md` (≤ 2 trang, đủ 8 mục theo mẫu); rà soát đủ 6 file hồ sơ + `group_report.md` + 4 file cá nhân + giữ nguyên `MSSV_HoTen.md`; commit & push toàn bộ lên nhánh `main`. |
+| **TV1, TV2, TV3, TV4** | Mỗi người **copy** `report/team/MSSV_HoTen.md` thành `<MSSV>_<HoTen>.md` (viết đủ 6 mục, **giữ nguyên file mẫu**); tự điền mục đóng góp cá nhân vào `TEAM.md`. |
+| **TV4** *(Giữ hồ sơ)* | Hoàn thiện `report/team/group_report.md` (tối đa 2 trang, đủ 8 mục dẫn lại số chính và kết quả duyệt chéo). |
+
+#### Bước 7.2 · Kiểm chứng kỹ thuật trước khi push (`17:52 – 17:57` · 5 phút)
+| Thứ tự | Thành viên | Việc kiểm chứng |
+|---|---|---|
+| 1️⃣ | **TV2** *(trên máy 2)* | Chạy trọn vẹn `cd src && python lab13.py`, kiểm tra `yaml.safe_load` cho `pilot_plan.yaml` và `git diff --stat` các file không được sửa. |
+| 2️⃣ | **TV3** *(QA)* | Chạy lệnh quét từ `"production"`, quét dấu `?` ngoài comment trong YAML, rà nhãn `simulated` và kiểm tra không có vai trò `"cả đội"`. |
+
+#### Bước 7.3 · Commit & Push lên GitHub (`17:57 – 18:00` · 3 phút)
+- **TV4** kiểm tra `git status` (không lọt `.venv/`, `.env`), điền URL commit chốt vào `TEAM.md`, commit & push lên nhánh `main` của repo `K5-L3A-DAY13-PhanDao-LaunchEconomics`.
 
 ---
 
 ### Chặng 8 · Hậu kiểm & Nộp bài cá nhân trên LMS (`18:00 – 23:59 GMT+7`)
 
-- **18:00 – 22:00 (nếu cần trau chuốt thêm):** Nếu tại lớp chưa kịp hoàn chỉnh `group_report.md` hoặc 4 file báo cáo cá nhân `report/team/<MSSV>_<HoTen>.md`, tạo **commit mới** (tuyệt đối **không** `git push --force`, xóa commit hay sửa timestamp theo `RULES.md`), điền thông tin commit chốt vào `TEAM.md`.
-- **Trước 23:59 GMT+7 (Bắt buộc với TẤT CẢ 4 người):**
-  - Kiểm tra repo `https://github.com/LysLama/K5-L3A-DAY13-PhanDao-LaunchEconomics` đang ở chế độ **Public** (hoặc đã mời giảng viên).
-  - **Cả 4 thành viên tự đăng nhập tài khoản LMS cá nhân và nộp cùng một link repo nhóm.** *(Theo `SUBMISSION.md`: ai không tự nộp link trên LMS sẽ không có điểm dù nhóm đã push).*
+> **Luồng công việc:** `8.1 Bổ sung commit (nếu cần)` ➔ `8.2 Kiểm tra repo Public & Cả 4 người nộp link LMS`
+
+#### Bước 8.1 · Trau chuốt sau giờ học (`18:00 – 22:00`, nếu cần)
+- Nếu tại lớp chưa kịp hoàn chỉnh `group_report.md` hoặc báo cáo cá nhân `report/team/<MSSV>_<HoTen>.md`, tạo **commit mới** bổ sung và cập nhật commit chốt trong `TEAM.md` (tuyệt đối **không** `git push --force`, xóa commit hay sửa timestamp theo `RULES.md`).
+
+#### Bước 8.2 · Chốt nộp LMS (`trước 23:59 GMT+7`, bắt buộc cả 4 người)
+1. **TV4** kiểm tra `https://github.com/LysLama/K5-L3A-DAY13-PhanDao-LaunchEconomics` đang ở chế độ **Public** (hoặc đã mời giảng viên).
+2. **Cả 4 thành viên** tự đăng nhập tài khoản LMS cá nhân và **nộp cùng một link repo nhóm** trước **23:59 GMT+7**. *(Theo `SUBMISSION.md`: ai không tự nộp link trên LMS sẽ không có điểm dù nhóm đã push).*
 
 ---
 
