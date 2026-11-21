@@ -53,7 +53,7 @@ Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` g
 
 Gốc (A2): 4.472 đ mỗi việc thành công [simulated].
 
-| Kịch bản | Cách tính | Chi phí mỗi việc thành công | Thay đổi (%) |
+| Kịch bản | Cách tính | Chi phí mỗi việc thành công [simulated] | Thay đổi (%) |
 | --- | --- | ---: | ---: |
 | Giá token gấp đôi | 52 đ và 260 đ cho 1.000 token; giá tool giữ nguyên | 4.723 | +5,6% |
 | Giá token giảm một nửa | 13 đ và 65 đ | 4.346 | −2,8% |
@@ -76,7 +76,7 @@ Kiểm tra tuyến tính: mức giảm khi "giảm một nửa" bằng nửa m�
 
 Chi phí cả hệ thống = tổng chi phí trợ lý + số yêu cầu không thành công × 12.000 đ.
 
-| Giới hạn | Tổng chi phí trợ lý | Số yêu cầu không thành công | Chi phí cả hệ thống | Chi phí mỗi việc thành công |
+| Giới hạn | Tổng chi phí trợ lý [simulated] | Số yêu cầu không thành công | Chi phí cả hệ thống [simulated] | Chi phí mỗi việc thành công [simulated] |
 | --- | ---: | ---: | ---: | ---: |
 | 1 lần | 3.621.781 | 319 | 7.449.781 | 4.111 |
 | 2 lần | 4.093.220 | 234 | 6.901.220 | 4.237 |

@@ -33,9 +33,9 @@ TV1 liệt kê. Ít nhất sáu event, mỗi event có `trace_id` để nối v�
 
 **Kiểm tra chéo:** với mỗi chỉ số ở bảng E1, ghi event dùng để tính. Chỉ số nào không tính được từ danh sách event thì chưa đo được.
 
-- Chỉ số chính (đóng trong 24 giờ và không mở lại trong 7 ngày): `ticket_closed.closed_at` so với `refund_request_created`, và không có `ticket_reopened` trong 7 ngày. Cả hai event có `trace_id`, nên đo được.
-- Chỉ số dùng (tỉ lệ bỏ qua gợi ý): `staff_review_decision` với quyet_dinh `sua` hoặc `bo`, chia số event `agent_suggestion_shown`. Đo được.
-- Chỉ số an toàn (mở lại trong 7 ngày): số `ticket_reopened` trong 7 ngày chia số `refund_request_created`. Đo được.
+- Chỉ số chính trong đợt chạy thử là 82,83% (994/1.200): `ticket_closed.closed_at` so với `refund_request_created`, và không có `ticket_reopened` trong 7 ngày. Cả hai event có `trace_id`, nên đo được.
+- Chỉ số dùng trong đợt chạy thử là 27,12% (48/177): `staff_review_decision` với quyet_dinh `sua` hoặc `bo`, chia số event `agent_suggestion_shown`. Đo được.
+- Chỉ số an toàn trong đợt chạy thử là 4,25% (51/1.200): số `ticket_reopened` trong 7 ngày chia số `refund_request_created`. Đo được.
 - Hai chỉ số nhóm tự đề xuất ở bảng E1 do TV3 đặt tên. Khi đã có tên, nối tiếp vào danh sách event trên; nếu không gắn được event có `trace_id` thì chỉ số đó chưa đo được.
 
 ## E2 · Rủi ro kinh tế

@@ -227,8 +227,7 @@ if __name__ == '__main__':
         hoa_von = du / (n_co_ok * LUONG_PHUT)
         print(f'  hoà vốn với 12.000 đ khi mỗi lần xem lại ≤ {hoa_von:.1f} phút')
 
-    # Tỉ lệ mở lại hiện tại: TV1 ghi vào chú thích pilot_plan.yaml trước khi TV3 đặt luật an toàn.
-    # Code cỡ mẫu D1 và ba chỉ số E1 để TV2 viết ở TODO CP4.
+    # Tỉ lệ mở lại hiện tại đã ghi ở chú thích pilot_plan.yaml. D1 và E1 do TV2 viết bên dưới.
     print('\n== Tỉ lệ mo_lai_trong_7_ngay hiện tại (cho luật an toàn) ==')
     mo = reqs['mo_lai_trong_7_ngay'].astype(int)
     mo_pv = pham_vi['mo_lai_trong_7_ngay'].astype(int)
@@ -265,7 +264,7 @@ if __name__ == '__main__':
     print(f'   power nếu tác động thật chỉ +5 điểm với n = {n_e}: {power_5:.4f}')
 
     # ----- E1 · Ba chỉ số trên 1.200 yêu cầu (TV2) -----
-    print('\n== E1 · Chỉ số trong đợt chạy thử (1.200 yêu cầu, simulated) ==')
+    print('\n== E1 · Chỉ số trong đợt chạy thử (1.200 yêu cầu) ==')
     dong = reqs['dong_trong_24h'].astype(int)
     chinh_ok = (dong == 1) & (mo == 0)
     xem = reqs[reqs['duoc_xem_lai'].astype(int) == 1]

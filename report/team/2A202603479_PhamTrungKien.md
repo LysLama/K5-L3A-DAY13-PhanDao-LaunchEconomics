@@ -53,9 +53,8 @@ Cursor (Grok) để viết hàm theo công thức trong `docs/Lab13_Huong_dan_ch
 
 ## 6. Tự đánh giá
 
-Phần code A–B và các trường YAML TV1 phụ trách đã chạy và khớp số đối chiếu trong hướng dẫn, sai số dưới 2%. Chưa commit. Các việc dưới đây dừng vì cần người khác sửa hoặc viết tiếp:
+Phần code A–B và các trường YAML TV1 phụ trách đã chạy và khớp số đối chiếu trong hướng dẫn, sai số dưới 2%. Đã rà bảng A và B: số khớp stdout, câu trả lời không quá 3 dòng, cột chi phí có nhãn `[simulated]`. D1 của TV2 in ra 1.251 · 3.103 · 1.000 · 300 · m ≥ 299, DE 6,96, power 0,6417, khớp chú thích `pilot_plan.yaml`. E1 in 82,83% · 27,12% · 4,25%, khớp `chi_so.md`. Ba dòng E2 khớp B1 (6.787 đ, +51,8%), B4 (11.743 đ = 0,98× và 12.415 đ = 1,03×) và A4 (1.185 đ, 2.370 đ), mỗi dòng một vai trò. Các việc dưới đây dừng vì cần người khác viết tiếp:
 
-- TV2 điền `report/team/bang_chi_phi.md` từ stdout, rồi viết D1 và E1 trong `src/lab13.py`, điền E2 trong `chi_so.md`, và chạy lại trên máy thứ 2.
-- TV3 viết 3 luật dừng trong `pilot_plan.yaml`, điền số E1 và hai chỉ số tự đề xuất trong `chi_so.md`.
-- TV3 và TV4 gắn nhãn 20 ca. Sau khi có nhãn thống nhất, TV4 ghép hai dòng khắc phục ở mục 3 vào `bang_loi.md`.
-- TV4 điền `ho_so_launch_v0.md`. Bản nói 1 phút ở mục 3 chỉ chốt sau đề xuất đó.
+- TV3 viết 3 luật dừng trong `pilot_plan.yaml` và hai chỉ số tự đề xuất trong `chi_so.md`.
+- TV3 gắn nhãn độc lập 20 ca. TV4 đã có bộ nhãn của mình và bản ghép 5 ca, nhưng `bang_loi.md` vẫn để trống để chờ so nhãn. Chưa ghi vào file đó.
+- TV4 khóa Mục 4, 5, 6 và đề xuất trong `ho_so_launch_v0.md`. Bản nói 1 phút ở mục 3 chỉ chốt sau đề xuất đó.

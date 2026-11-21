@@ -50,6 +50,7 @@ Người viết code giai đoạn 1: `src/lab13.py` cho nhiệm vụ A và B; đ
 - Viết A1, `mo_hinh`, A3, A4, B1–B4 trong `src/lab13.py` và chạy trên máy này tới khi A1 in ĐẠT.
 - Kiểm tay câu D1.e (m ≥ 299, DE = 6,96) và điền D1, D2, đánh đổi, các trường YAML.
 - Liệt kê 10 event có `trace_id` và mục kiểm tra chéo chỉ số ↔ event.
+- Rà bảng A và B, đối chiếu D1, E1, E2 với stdout của `lab13.py`.
 
 ### Bằng chứng
 
