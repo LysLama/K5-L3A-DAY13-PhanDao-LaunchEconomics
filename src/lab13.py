@@ -76,6 +76,16 @@ def mo_hinh(runs, reqs, gia_vao=26, gia_ra=130, gia_tool=15, luong_phut=2000,
                 n_yeu_cau=len(reqs), khong_thanh_cong=len(reqs) - thanh_cong)
 
 
+# ---------- Nhiệm vụ D1 · Cỡ mẫu hai tỉ lệ ----------
+def co_mau(p1, p2, alpha=0.05, power=0.8):
+    """Số đơn vị mỗi nhóm để phát hiện chênh p1 → p2 (kiểm định hai phía)."""
+    from statistics import NormalDist
+    za, zb = NormalDist().inv_cdf(1 - alpha / 2), NormalDist().inv_cdf(power)
+    pb = (p1 + p2) / 2
+    return math.ceil((za * math.sqrt(2 * pb * (1 - pb))
+                      + zb * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2 / (p2 - p1) ** 2)
+
+
 def _in_kq(ten, cps, goc):
     print(f'{ten:28s} {cps:10,.0f} {(cps / goc - 1) * 100:+7.1f}%')
 
@@ -225,8 +235,43 @@ if __name__ == '__main__':
     print(f'toàn mẫu = {mo.mean():.2%} ({int(mo.sum())}/{len(reqs)})')
     print(f'noi_dia + hang_nang = {mo_pv.mean():.2%} ({int(mo_pv.sum())}/{len(pham_vi)})')
 
-    # TODO CP4 · Nhiệm vụ D (TV2 viết code D1 và E1 vào đây).
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
-    print('\n== Chờ TV2 · TODO CP4 (D1) và E1 ==')
-    print('TV1 xong A1–A4 và B1–B4. Chưa viết cỡ mẫu D1 hay ba chỉ số E1.')
+    # ----- D1 · Cỡ mẫu theo ba cách chia (TV2) -----
+    from statsmodels.stats.proportion import proportion_effectsize
+    from statsmodels.stats.power import NormalIndPower
+
+    P1, P2, P2_6, ICC = 0.70, 0.75, 0.76, 0.02
+    print('\n== D1 · Cỡ mẫu (baseline 0,70; alpha 0,05; power 0,8; ICC 0,02) ==')
+    n_a = co_mau(P1, P2)
+    print(f'a) chia theo yêu cầu, +5 điểm: {n_a:,} yêu cầu mỗi nhóm')
+    m_b = 75
+    de_b = 1 + (m_b - 1) * ICC
+    n_b = math.ceil(n_a * de_b)
+    nguoi_b = math.ceil(n_b / m_b)
+    print(f'b) theo nhân viên, m = {m_b}: DE = {de_b:.2f}; n = {n_b:,} mỗi nhóm '
+          f'→ {nguoi_b} người/nhóm, tổng {2 * nguoi_b} > 40: không đủ người')
+    tran_c = 20 / ICC
+    print(f'c) 20 nhân viên/nhóm: n hiệu dụng tối đa = 20 / {ICC} = {tran_c:,.0f} '
+          f'{"<" if tran_c < n_a else ">="} {n_a:,}: {"không đạt" if tran_c < n_a else "đạt"}')
+    tran_d = 6 / ICC
+    print(f'd) 6 depot/nhóm: n hiệu dụng tối đa = 6 / {ICC} = {tran_d:,.0f}: loại')
+    n_e = co_mau(P1, P2_6)
+    m_e = 1
+    while 20 * m_e / (1 + (m_e - 1) * ICC) < n_e:
+        m_e += 1
+    de_e = 1 + (m_e - 1) * ICC
+    print(f'e) +6 điểm: {n_e:,} mỗi nhóm; 20 người/nhóm cần m ≥ {m_e} yêu cầu/người (DE = {de_e:.2f})')
+    power_5 = NormalIndPower().power(effect_size=proportion_effectsize(P2, P1), nobs1=n_e,
+                                     alpha=0.05, ratio=1.0, alternative='two-sided')
+    print(f'   power nếu tác động thật chỉ +5 điểm với n = {n_e}: {power_5:.4f}')
+
+    # ----- E1 · Ba chỉ số trên 1.200 yêu cầu (TV2) -----
+    print('\n== E1 · Chỉ số trong đợt chạy thử (1.200 yêu cầu, simulated) ==')
+    dong = reqs['dong_trong_24h'].astype(int)
+    chinh_ok = (dong == 1) & (mo == 0)
+    xem = reqs[reqs['duoc_xem_lai'].astype(int) == 1]
+    bo_qua_ok = xem['quyet_dinh_xem_lai'].isin(['sua', 'bo'])
+    print(f'chính   = {chinh_ok.mean():.2%} ({int(chinh_ok.sum())}/{len(reqs)})  '
+          f'đóng trong 24h và không mở lại trong 7 ngày')
+    print(f'bỏ qua  = {bo_qua_ok.mean():.2%} ({int(bo_qua_ok.sum())}/{len(xem)})  '
+          f'sua + bo trên số được xem lại')
+    print(f'an toàn = {mo.mean():.2%} ({int(mo.sum())}/{len(reqs)})  mở lại trong 7 ngày')

@@ -57,3 +57,21 @@ Người viết code giai đoạn 1: `src/lab13.py` cho nhiệm vụ A và B; đ
 - `report/team/pilot_plan.yaml` (3 dòng `stop_rules` còn `?`, chờ TV3)
 - `report/team/chi_so.md` (mục Danh sách event và Kiểm tra chéo)
 - `report/team/2A202603479_PhamTrungKien.md`
+
+## Nguyễn Đắc Tuấn Nghĩa — 2A202603442 (TV2)
+
+### Phần việc phụ trách
+
+Người kiểm số ở CP1–CP2 (`report/team/bang_chi_phi.md`), nhận vai Người viết code từ CP3: code D1 và E1 trong `src/lab13.py`, điền E1 và E2 trong `report/team/chi_so.md`, kiểm tra `pilot_plan.yaml`, chạy lại toàn bộ trên máy thứ 2; đề xuất khắc phục lỗi Ngầm và Do người dùng; trả lời phản biện Gate 2a.
+
+### Đóng góp cụ thể
+
+- Tính độc lập đối chiếu A1–A2 (token 245.585 đ, tool 84.000 đ, xem lại 1.780.000 đ, làm lại 2.264.000 đ [simulated]) và điền đủ A1–A4, B1–B4.
+- Viết `co_mau`, D1 a–e (1.251 · 3.103 · 1.000 · 300 · m ≥ 299, DE 6,96, power 0,6417) và E1 (82,83% · 27,12% · 4,25%).
+- Điền 3 dòng rủi ro kinh tế E2 lấy số từ A4, B1, B4.
+
+### Bằng chứng
+
+- Commit `563a57c`, `0ccf501`, `c2d2c36` và commit CP4–CP5
+- `src/lab13.py` (khối D1, E1), `report/team/bang_chi_phi.md`, `report/team/chi_so.md`
+- `report/team/2A202603442_NguyenDacTuanNghia.md`

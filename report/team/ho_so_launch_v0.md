@@ -12,7 +12,7 @@ Nhóm: PhanDao · Lớp: L3A
 | 4 · Chỉ số chính, chỉ số dùng, chỉ số an toàn | ... | Chưa | Người gắn nhãn 1 |
 | 5 · Bảng lỗi và cách khắc phục | ... | Chưa | Người gắn nhãn 2, kiêm giữ hồ sơ |
 | 6 · Pilot plan | ... | Chưa | Người viết code |
-| 7 · Rủi ro kinh tế | ... | Chưa | Người kiểm số |
+| 7 · Rủi ro kinh tế | Làm lại ×2 → 6.787 đ (+51,8%); xem lại 100% → 0,98×–1,03×; nửa khối lượng → cố định +2.370 đ/việc [simulated] | Giả lập | Người kiểm số |
 
 **Đề xuất:** Go · Go có điều kiện · No-go (giữ một). Go có điều kiện: ghi từng điều kiện, người phụ trách, ngày kiểm tra. No-go: ghi việc phải làm để quay lại cổng.
 
