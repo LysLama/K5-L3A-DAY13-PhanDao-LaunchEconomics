@@ -24,30 +24,30 @@ Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` g
 | Chi phí mỗi việc thành công | 4.472 | | simulated |
 | Hoá đơn token và tool chia cho số yêu cầu | 274,7 | | đo từ trace |
 
-- Chi phí mỗi việc thành công 4.472 đ gấp **16,3 lần** hoá đơn chia số yêu cầu (274,7 đ) [simulated]: hoá đơn chỉ là 7,5% tổng chi phí.
+- Chi phí mỗi việc thành công 4.472 đ gấp **16,3 lần** hoá đơn chia số yêu cầu (274,7 đ) [simulated]; tính cả 222 ca không thành công × 12.000 đ, chi phí cả hệ thống là **5.865 đ/yêu cầu = 0,49×** [simulated].
 - Lớn nhất là **làm lại: 51,8%** tổng, rồi xem lại 40,7%; giờ nhân viên chiếm 92,5%, token 5,6%, tool 1,9% [simulated].
 
 ## A3 · Tách theo loại yêu cầu
 
-| Loại | Số yêu cầu | Tỉ lệ thành công | Số lần chạy mỗi yêu cầu | Chi phí mỗi việc thành công | So với 12.000 đ |
+| Loại | Số yêu cầu | Tỉ lệ thành công | Số lần chạy mỗi yêu cầu | Chi phí mỗi việc thành công [simulated] | So với 12.000 đ [simulated] |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | noi_dia | 824 | 95,0% | 1,11 | 2.696 | 0,22× |
 | hang_nang | 158 | 74,1% | 1,47 | 8.221 | 0,69× |
 | quoc_te | 150 | 27,3% | 2,32 | 22.515 | 1,88× |
 | doi_tac | 68 | 54,4% | 1,88 | 10.215 | 0,85× |
 
-- `quoc_te` không đáng chạy: 22.515 đ/việc = 1,88× của 12.000 đ, chỉ 27,3% thành công [simulated].
-- Chạy lại không giúp: tỉ lệ `ok` của `quoc_te` theo attempt là 30,0% → 11,4% → 2,2%, mỗi lần chạy thêm tốn thêm (2,32 lần/yc) mà gần như không cứu được ca nào.
+- `quoc_te` không đáng chạy: 22.515 đ/việc = 1,88× của 12.000 đ, chỉ 27,3% thành công [simulated]; `doi_tac` (10.215 đ = 0,85×, 54,4% thành công, 1,88 lần/yc) sát ngưỡng và có điều khoản riêng nên thu hẹp pilot về `noi_dia + hang_nang`.
+- Chạy lại không giúp cho `quoc_te`: trung bình 2,32 lần/yêu cầu nhưng tỉ lệ `ok` theo từng attempt tụt mạnh 30,0% → 11,4% → 2,2%, càng chạy lại càng tốn chi phí mà hầu như không cứu được ca nào.
 
 ## A4 · Chi phí cố định (phạm vi noi_dia + hang_nang)
 
-| Khối lượng | Việc thành công mỗi tháng | Chi phí cố định mỗi việc | Chi phí mỗi việc thành công + cố định | So với 12.000 đ |
+| Khối lượng | Việc thành công mỗi tháng | Chi phí cố định mỗi việc | Chi phí mỗi việc thành công + cố định [simulated] | So với 12.000 đ [simulated] |
 | --- | ---: | ---: | ---: | ---: |
 | 45.000 yêu cầu/tháng | 33.750 | 1.185 | 4.599 | 0,38× |
 | Một nửa khối lượng | 16.875 | 2.370 | 5.784 | 0,48× |
 
 - Không đổi kết luận: cả hai mức vẫn dưới 12.000 đ (0,38× và 0,48×, chi phí biến đổi trong phạm vi 3.414 đ/việc) [simulated].
-- Cố định tăng gấp đôi khi khối lượng giảm một nửa; chỉ hoà vốn khi còn khoảng 4.660 việc thành công/tháng (~6.200 yêu cầu/tháng), nên hồ sơ phải ghi rõ số đã cộng cố định ở khối lượng nào.
+- Cố định tăng gấp đôi khi khối lượng giảm một nửa; chỉ hoà vốn khi còn khoảng 4.660 việc thành công/tháng (~6.200 yêu cầu/tháng) [simulated], nên hồ sơ phải ghi rõ số đã cộng cố định ở khối lượng nào.
 
 ## B1 · Đổi từng yếu tố
 
