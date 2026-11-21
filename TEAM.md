@@ -7,7 +7,7 @@
 - Repo nhóm: `K5-L3A-DAY13-PhanDao-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
 - URL repo: https://github.com/LysLama/K5-L3A-DAY13-PhanDao-LaunchEconomics
 - Nhánh nộp: `main`
-- Commit chốt: (điền khi push bản cuối)
+- Commit chốt: bản mới nhất trên nhánh `main` (đã hoàn tất toàn bộ hồ sơ CP1–CP5, Gate 2a và báo cáo nhóm/cá nhân)
 
 ## Thành viên
 

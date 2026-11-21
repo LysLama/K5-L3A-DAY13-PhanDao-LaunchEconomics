@@ -93,6 +93,6 @@ Thiết kế dòng khắc phục cho lỗi **Ngữ cảnh** (ca 18) và chuẩn 
 
 ## 6. Tự đánh giá
 
-- Đã hoàn thành toàn bộ phần việc của TV4 từ Chặng 0 đến Chặng 5 và thực hiện chấm hồ sơ nhóm `QuanHocOnline` cho Chặng 6 (Gate 2a):
-  - Hoàn tất `TEAM.md`, `TIMELINE.md`, `report/team/ho_so_launch_v0.md` (đủ 7 mục + đề xuất `Go có điều kiện` 1 trang), `report/team/phieu_cham.md` (chấm nhóm `QuanHocOnline` 30/30 kèm lý do số và 1 câu hỏi phản biện), `report/team/group_report.md`, `report/team/2A202603475_LyThanhLam.md` và hoàn tất đối chiếu `report/team/bang_loi.md` đạt đồng thuận `20/20 = 100%` cùng TV3 (`Nguyễn Thanh Tùng`).
-  - Phần duy nhất còn lại là ghi lại câu trả lời của nhóm `QuanHocOnline` vào cuối `report/team/phieu_cham.md`, bổ sung điểm/nhận xét nhóm mình nhận được từ hội đồng vào `report/team/group_report.md` (nếu có) và điền mã commit chốt cuối vào `TEAM.md` trước khi nộp link repo lên LMS.
+- Đã hoàn thành toàn bộ phần việc của TV4 từ Chặng 0 đến Chặng 7 (tổng hợp đóng gói trước hạn nộp LMS):
+  - Hoàn tất `TEAM.md`, `TIMELINE.md`, `report/team/ho_so_launch_v0.md` (đủ 7 mục + đề xuất `Go có điều kiện` 1 trang), `report/team/phieu_cham.md` (hoàn chỉnh chấm nhóm `QuanHocOnline` `30/30` kèm lý do số, câu hỏi phản biện và giải trình đối chiếu hồ sơ), `report/team/group_report.md`, `report/team/2A202603475_LyThanhLam.md` và hoàn tất đối chiếu `report/team/bang_loi.md` đạt đồng thuận `20/20 = 100%` cùng TV3 (`Nguyễn Thanh Tùng`).
+  - Sẵn sàng để cả 4 thành viên nộp link repo `https://github.com/LysLama/K5-L3A-DAY13-PhanDao-LaunchEconomics` lên LMS trước `23:59 GMT+7`.
