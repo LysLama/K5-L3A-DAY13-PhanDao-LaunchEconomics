@@ -7,8 +7,8 @@
 | Chính (kết quả) | % yêu cầu đóng trong 24 giờ và không mở lại trong 7 ngày | `dong_trong_24h` bằng 1 và `mo_lai_trong_7_ngay` bằng 0, chia tổng số yêu cầu | 82,83% (994/1.200) |
 | Dùng | Tỉ lệ bỏ qua gợi ý | `quyet_dinh_xem_lai` là `sua` hoặc `bo`, chia số yêu cầu được xem lại | 27,12% (48/177) |
 | An toàn | Tỉ lệ lỗi lọt đến khách | `mo_lai_trong_7_ngay` bằng 1, chia tổng số yêu cầu | 4,25% (51/1.200) |
-| Dùng | Nhóm tự đề xuất: ... | ... | Không cần tính |
-| An toàn | Nhóm tự đề xuất: ... | ... | Không cần tính |
+| Dùng | Nhóm tự đề xuất: Tỉ lệ độ sâu sử dụng trợ lý (% yêu cầu nhóm can thiệp có mở gợi ý) | Số yêu cầu nhóm can thiệp (`arm == 'treatment'`) có `agent_suggestion_shown`, chia tổng số yêu cầu của nhóm can thiệp (`refund_request_created`) | Không cần tính |
+| An toàn | Nhóm tự đề xuất: Tỉ lệ hoàn sai tiền qua kiểm tra mẫu hằng tuần (bắt lỗi ngầm) | Số đơn kiểm mẫu có `so_tien_da_hoan != so_tien_dung`, chia tổng số đơn kiểm mẫu trong tuần (`audit_sample_checked`, tối thiểu 100 đơn/tuần) | Không cần tính |
 
 Chỉ số chính trong đợt chạy thử là 82,83%; tỉ lệ bỏ qua trong đợt chạy thử là 27,12%; tỉ lệ mở lại trong đợt chạy thử là 4,25% (`src/lab13.py`, mục E1).
 
@@ -36,7 +36,8 @@ TV1 liệt kê. Ít nhất sáu event, mỗi event có `trace_id` để nối v�
 - Chỉ số chính trong đợt chạy thử là 82,83% (994/1.200): `ticket_closed.closed_at` so với `refund_request_created`, và không có `ticket_reopened` trong 7 ngày. Cả hai event có `trace_id`, nên đo được.
 - Chỉ số dùng trong đợt chạy thử là 27,12% (48/177): `staff_review_decision` với quyet_dinh `sua` hoặc `bo`, chia số event `agent_suggestion_shown`. Đo được.
 - Chỉ số an toàn trong đợt chạy thử là 4,25% (51/1.200): số `ticket_reopened` trong 7 ngày chia số `refund_request_created`. Đo được.
-- Hai chỉ số nhóm tự đề xuất ở bảng E1 do TV3 đặt tên. Khi đã có tên, nối tiếp vào danh sách event trên; nếu không gắn được event có `trace_id` thì chỉ số đó chưa đo được.
+- Chỉ số dùng tự đề xuất (độ sâu sử dụng trợ lý): đếm số `trace_id` duy nhất có event `agent_suggestion_shown` chia cho số `refund_request_created` lọc theo `arm == 'treatment'`. Cả hai event đều có `trace_id`, nên đo được.
+- Chỉ số an toàn tự đề xuất (tỉ lệ hoàn sai tiền bắt lỗi ngầm): lấy từ event `audit_sample_checked` hằng tuần (so sánh `so_tien_da_hoan != so_tien_dung` trên tối thiểu `100 đơn/tuần`). Event có `trace_id`, nên đo được.
 
 ## E2 · Rủi ro kinh tế
 

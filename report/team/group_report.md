@@ -6,7 +6,7 @@ Báo cáo ngắn, tối đa 2 trang. Số liệu chi tiết nằm trong các fil
 
 - Tên nhóm: PhanDao
 - Lớp: L3A
-- Thành viên: xem [TEAM.md](../../TEAM.md) (`Phạm Trung Kiên - 2A202603479`, `Nguyễn Đắc Tuấn Nghĩa - 2A202603442`, `Phạm Thanh Tùng - 2A202603446`, `Lý Thanh Lâm - 2A202603475`)
+- Thành viên: xem [TEAM.md](../../TEAM.md) (`Phạm Trung Kiên - 2A202603479`, `Nguyễn Đắc Tuấn Nghĩa - 2A202603442`, `Nguyễn Thanh Tùng - 2A202603446`, `Lý Thanh Lâm - 2A202603475`)
 
 ## 2. Mục tiêu và cách tiếp cận
 
@@ -40,7 +40,7 @@ Tóm tắt cách nhóm thực hiện từng nhiệm vụ A–E và liên kết t
 
 ## 6. Tổng hợp đóng góp
 
-Chi tiết vai trò, phần việc và bằng chứng commit/file của cả 4 thành viên (`TV1: Phạm Trung Kiên`, `TV2: Nguyễn Đắc Tuấn Nghĩa`, `TV3: Phạm Thanh Tùng`, `TV4: Lý Thanh Lâm`) được ghi đầy đủ trong [TEAM.md](../../TEAM.md) và 4 file báo cáo cá nhân `report/team/<MSSV>_<HoTen>.md`.
+Chi tiết vai trò, phần việc và bằng chứng commit/file của cả 4 thành viên (`TV1: Phạm Trung Kiên`, `TV2: Nguyễn Đắc Tuấn Nghĩa`, `TV3: Nguyễn Thanh Tùng`, `TV4: Lý Thanh Lâm`) được ghi đầy đủ trong [TEAM.md](../../TEAM.md) và 4 file báo cáo cá nhân `report/team/<MSSV>_<HoTen>.md`.
 
 ## 7. Hạn chế và hướng cải thiện
 

@@ -1,5 +1,5 @@
 # Lab 13 · Nhiệm vụ D · Kế hoạch pilot trợ lý hoàn phí LogiX-VN (Gate 2a)
-# TV1 điền D1, D2, đánh đổi và các trường YAML. Ba luật dừng còn dấu hỏi: chờ TV3.
+# TV1 điền D1, D2, đánh đổi và các trường YAML; TV3 soạn và QA 3 luật dừng (không còn dấu hỏi).
 # Kiểm tra đọc được: python -c "import yaml; yaml.safe_load(open('../report/team/pilot_plan.yaml'))"
 #
 # D1 · Cỡ mẫu (baseline 0,70; mục tiêu +5 điểm; alpha 0,05; power 0,8; ICC 0,02)
@@ -53,10 +53,10 @@ pilot:
     spillover_risk: "Có rủi ro chia sẻ câu trả lời trong depot; giảm bằng quyền theo tài khoản và log lượt mở theo staff_id"
     predeclared: "Có: chỉ số chính, MDE 0,06, luật dừng và ngày quyết định 2027-01-05 viết trước ngày bắt đầu"
   stop_rules:
-    # TV3 soạn ít nhất 3 luật (an toàn, chi phí, sử dụng), đúng mẫu NẾU – TRONG – THÌ – KHÔNG THÌ.
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
-    - "NẾU ? TRONG ? THÌ ? KHÔNG THÌ ?"
+    # TV3 đã soạn đủ 3 luật (An toàn, Chi phí, Sử dụng), đúng mẫu NẾU – TRONG – THÌ – KHÔNG THÌ.
+    - "NẾU tỉ lệ mở lại 7 ngày (mo_lai_trong_7_ngay) của nhóm dùng trợ lý cao hơn nhóm đối chứng >= 2 điểm phần trăm hoặc vượt trần 6%, hoặc phát sinh >= 1 ca hoàn tiền trùng lặp TRONG 3 ngày liên tiếp THÌ Giám đốc vận hành LogiX-VN bấm cờ tắt trợ lý trong 30 phút và chuyển toàn bộ sang luồng nhân viên tự làm KHÔNG THÌ không được mở sang bước rollout tiếp theo"
+    - "NẾU chi phí mỗi việc thành công (tính từ token, tool và phút xem lại/làm lại đo thật, chưa gồm cố định) > 8.000 đ hoặc tỉ lệ ca làm lại > 7% TRONG 2 tuần liên tiếp THÌ PM trợ lý hoàn phí thu hẹp phạm vi về noi_dia và giới hạn tối đa 2 lần chạy KHÔNG THÌ không được mở rộng thêm hang_nang hoặc tăng lên bước rollout 0.50"
+    - "NẾU tỉ lệ bỏ qua gợi ý (sua hoặc bo trên số được xem lại) > 40% hoặc tỉ lệ mở trợ lý của nhóm can thiệp < 50% TRONG 1 tuần (7 ngày) THÌ Trưởng nhóm CSKH dừng mở rộng và phỏng vấn tối thiểu 5 nhân viên trong 3 ngày để sửa luồng gợi ý KHÔNG THÌ không được chuyển sang bước rollout tiếp theo hoặc giảm tỉ lệ xem lại"
   interim_looks: "chỉ kiểm tra chỉ số an toàn"
   rollback: "Giám đốc vận hành bấm cờ tắt, hiệu lực 30 phút; khách được phục vụ bằng luồng nhân viên tự làm"
   decision_date: "2027-01-05"

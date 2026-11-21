@@ -35,7 +35,7 @@ Theo `TEAM.md` và `CHECKPOINTS.md`, nhóm chia 4 vai chính thức và **đổi
 > **Điền nhanh đầu buổi (14:00):**
 > - **TV1 (Người viết code GĐ1):** `Phạm Trung Kiên - 2A202603479`
 > - **TV2 (Người kiểm số & Người viết code GĐ2):** `Nguyễn Đắc Tuấn Nghĩa - 2A202603442`
-> - **TV3 (Người gắn nhãn 1 & QA / Spec):** `Phạm Thanh Tùng - 2A202603446`
+> - **TV3 (Người gắn nhãn 1 & QA / Spec):** `Nguyễn Thanh Tùng - 2A202603446`
 > - **TV4 (Người gắn nhãn 2 kiêm Giữ hồ sơ / PM):** `Lý Thanh Lâm - 2A202603475`
 
 ### Ma trận trách nhiệm theo file (tránh xung đột Git)
